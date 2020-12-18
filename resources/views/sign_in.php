@@ -59,7 +59,7 @@
 
 							<div class="sign__group sign__group--checkbox">
 								<input id="remember" name="remember" type="checkbox" checked="checked">
-								<label for="remember">{{hoten}}</label>
+								<label for="remember" style="color: {{hoten}}">{{hoten}}</label>
 							</div>
 							
 							<button class="sign__btn" type="button">Sign in</button>
