@@ -17,22 +17,22 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/sign_in',function(){
+Route::get('/sign_in', function () {
     return view('sign_in');
 });
 
-Route::get('/sign_up',function(){
+Route::get('/sign_up', function () {
     return view('sign_up');
 });
 
-Route::get('/xemchitiet',function(){
+Route::get('/xemchitiet', function () {
     return view('xemchitiet');
 });
 
 
 // admin
-Route::get('/admin/dashboard',function(){
+Route::get('/admin/dashboard', function () {
     return view('admin/dashboard');
 });
 
-Route::get('list',['uses'=>'SinhVienController@getList']);
+Route::get('list', ['uses' => 'SinhVienController@getList']);
