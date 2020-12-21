@@ -36,7 +36,7 @@
 	<title>FlixGo – Online Movies, TV Shows & Cinema HTML Template</title>
 
 </head>
-<body class="body" ng-controller="SinhVienController">
+<body class="body" >
 
 	<div class="sign section--bg" data-bg="<?php echo asset('template/img/section/section.jpg') ; ?>">
 		<div class="container">
@@ -49,12 +49,13 @@
 								<img src="<?php echo asset('template/img/logo.svg') ; ?>" alt="">
 							</a>
 
-							<div class="sign__group">
+							<div class="sign__group" ng-controller="cntrl1">
 								<input type="text" class="sign__input" placeholder="Email" ng-model="hoten">
+								<button class="sign__btn" type="button" ng-click="SendData()">Sign in</button>
 							</div>
 
-							<div class="sign__group">
-								<input type="password" class="sign__input" placeholder="Password">
+							<div class="sign__group" ng-controller="cntrl2">
+								<input type="text" class="sign__input" placeholder="Password" ng-model="title2">
 							</div>
 
 							<div class="sign__group sign__group--checkbox">
@@ -62,7 +63,7 @@
 								<label for="remember">{{hoten}}</label>
 							</div>
 							
-							<button class="sign__btn" type="button">Sign in</button>
+							
 
 							<span class="sign__text">Don't have an account? <a href="signup.html">Sign up!</a></span>
 
