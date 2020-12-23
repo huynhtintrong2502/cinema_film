@@ -11,8 +11,5 @@ class SinhVienController extends Controller
     {
         return SinhVien::orderBy('id','DESC')->get();
     }
-    public function getList_user()
-    {
-        return User_Type::orderBy('MaUT','DESC')->get();
-    }
+    
 }

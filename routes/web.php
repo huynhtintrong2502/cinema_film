@@ -48,12 +48,4 @@ Route::get('admin/list_user',function(){
 });
 Route::get('list1',['uses'=>'SinhVienController@getList']);
 
-Route::get('list_user',['uses'=>'SinhVienController@getList_user']);
 
-route::get('db',function(){
-    $list = DB::table('SinhVien')->get();
-    echo '<pre>';
-    print_r($list);
-    echo '</pre>';
-
-});
