@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="en" ng-app="my-app">
+<html lang="en" ng-app="main-App">
 
 <head>
 	<meta charset="utf-8">
@@ -7,7 +7,7 @@
 
 	<!-- Font -->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600%7CUbuntu:300,400,500,700" rel="stylesheet">
-
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
 	<!-- CSS -->
 	<link type="text/css" rel="stylesheet" href="<?php echo asset('template/css/bootstrap-reboot.min.css') ; ?>" />
 	<link type="text/css" rel="stylesheet" href="<?php echo asset('template/css/bootstrap-grid.min.css') ; ?>" />
@@ -19,6 +19,7 @@
 	<link type="text/css" rel="stylesheet" href="<?php echo asset('template/css/photoswipe.css') ; ?>" />
 	<link type="text/css" rel="stylesheet" href="<?php echo asset('template/css/default-skin.css') ; ?>" />
 	<link type="text/css" rel="stylesheet" href="<?php echo asset('template/css/main.css') ; ?>" />
+	
 	
 	
 
@@ -35,7 +36,7 @@
 	<title>FlixGo – Online Movies, TV Shows & Cinema HTML Template</title>
 
 </head>
-<body class="body"  ng-controller="SinhVienController">
+<body class="body"  >	
 	<!-- header -->
 	<header class="header">
 		<div class="header__wrap">
@@ -56,8 +57,8 @@
 									<a class="dropdown-toggle header__nav-link" href="#" role="button" id="dropdownMenuHome" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Home</a>
 
 									<ul class="dropdown-menu header__dropdown-menu" aria-labelledby="dropdownMenuHome">
-										<li><a href="#">Home slideshow bg</a></li>
-										<li><a href="#">Home static bg</a></li>
+										<li><a href="#!">Home slideshow bg</a></li>
+										<li><a href="#!products">Home static bg</a></li>
 									</ul>
 								</li>
 								<!-- end dropdown -->
@@ -76,7 +77,7 @@
 								<!-- end dropdown -->
 
 								<li class="header__nav-item">
-									<a href="sign_in" class="header__nav-link">{{hoten}}</a>
+									<button  class="header__nav-link" ng-click="SendData()">{{hoten}}</button>
 								</li>
 
 								<li class="header__nav-item">
@@ -142,6 +143,8 @@
 	<!-- end header -->
 
 	<!-- home -->
+	
+
 	<section class="home">
 		<!-- home bg -->
 		<div class="owl-carousel home__bg">
@@ -1543,7 +1546,7 @@
 	</section>
 	<!-- end partners -->
 
-	<!-- footer -->
+<!-- footer -->
 	<footer class="footer">
 		<div class="container">
 			<div class="row">
@@ -1612,6 +1615,13 @@
 	</footer>
 	<!-- end footer -->
 
+	
+
+
+
+
+	
+	
 	<!-- JS -->
 	<script src="<?php echo asset('template/js/jquery-3.3.1.min.js') ; ?>"></script>
 	<script src="<?php echo asset('template/js/bootstrap.bundle.min.js') ; ?>"></script>
