@@ -17,6 +17,7 @@ class CreateLoaikhachhangTable extends Migration
             $table->integer('MaLoaiKH')->primary();
             $table->string('TenLoaiKH');
             $table->integer('MucUuDai');
+            $table->integer('Xoa')->default(0);
             $table->timestamps();
         });
     }

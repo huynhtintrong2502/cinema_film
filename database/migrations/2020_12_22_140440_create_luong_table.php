@@ -14,9 +14,10 @@ class CreateLuongTable extends Migration
     public function up()
     {
         Schema::create('luong', function (Blueprint $table) {
-            $table->integer('MaLuong')->primary();
+            $table->increments('MaLuong',true);//integer('MaLuong')->primary();
             $table->string('MaNV');
             $table->double('Luong');
+            $table->integer('Xoa')->default(0);
 
             $table->timestamps();
         });

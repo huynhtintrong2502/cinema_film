@@ -17,6 +17,7 @@ class CreateLoaigheTable extends Migration
             $table->integer('MaLoaiGhe')->primary();
             $table->string('TenLoaiGhe');
             $table->double('GiaGhe');
+            $table->integer('Xoa')->default(0);
             $table->timestamps();
         });
     }

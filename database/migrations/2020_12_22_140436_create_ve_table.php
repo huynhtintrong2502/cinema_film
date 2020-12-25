@@ -14,7 +14,9 @@ class CreateVeTable extends Migration
     public function up()
     {
         Schema::create('ve', function (Blueprint $table) {
-            $table->integer('MaVe')->primary();
+            $table->increments('MaVe',true);//integer('MaVe')->primary();
+            $table->string('MaNV');
+            $table->foreign('MaNV')->references('MaNV')->on('nhanvien');
             $table->integer('MaSC');
             $table->foreign('MaSC')->references('MaSC')->on('suatchieu');
             $table->integer('MaGhe');
@@ -25,6 +27,7 @@ class CreateVeTable extends Migration
             $table->foreign('MaPhim')->references('MaPhim')->on('phim');
             $table->date('NgayMua');
             $table->double('GiaVe');
+            $table->integer('Xoa')->default(0);
             $table->timestamps();
         });
     }

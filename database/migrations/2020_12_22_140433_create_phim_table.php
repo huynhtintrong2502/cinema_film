@@ -22,6 +22,7 @@ class CreatePhimTable extends Migration
             $table->string('NoiDung');
             $table->decimal('DanhGia');
             $table->integer('AgeDuocXem');
+            $table->integer('Xoa')->default(0);
             $table->timestamps();
         });
     }

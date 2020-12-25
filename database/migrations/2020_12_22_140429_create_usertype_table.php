@@ -16,6 +16,7 @@ class CreateUsertypeTable extends Migration
         Schema::create('usertype', function (Blueprint $table) {
             $table->integer('MaUT')->primary();
             $table->string('TenUT');
+            $table->integer('Xoa')->default(0);
             $table->timestamps();
         });
     }

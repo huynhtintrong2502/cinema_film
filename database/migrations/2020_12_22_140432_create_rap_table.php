@@ -16,6 +16,7 @@ class CreateRapTable extends Migration
         Schema::create('rap', function (Blueprint $table) {
             $table->integer('MaRap')->primary();
             $table->string('TenRap');
+            $table->integer('Xoa')->default(0);
             $table->timestamps();
         });
     }

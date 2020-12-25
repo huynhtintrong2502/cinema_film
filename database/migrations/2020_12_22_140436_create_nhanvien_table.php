@@ -23,6 +23,7 @@ class CreateNhanvienTable extends Migration
             $table->string('SDT');
             $table->date('NgayBD');
             $table->string('Anh');
+            $table->integer('Xoa')->default(0);
             $table->timestamps();
         });
     }

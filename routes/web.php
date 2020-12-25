@@ -48,4 +48,6 @@ Route::get('admin/list_user',function(){
 });
 Route::get('list1',['uses'=>'SinhVienController@getList']);
 
+Route::get('list2',['uses'=>'usertypeController@getList']);
+
 

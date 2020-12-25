@@ -14,13 +14,14 @@ class CreateCommentTable extends Migration
     public function up()
     {
         Schema::create('comment', function (Blueprint $table) {
-            $table->integer('ID')->primary();
+            $table->increments('ID',true);//integer('ID')->primary();
             $table->integer('MaPhim');
             $table->foreign('MaPhim')->references('MaPhim')->on('phim');
             $table->integer('MaKH');
             $table->foreign('MaKH')->references('MaKH')->on('khachhang');
             $table->double('DanhGia');
             $table->string('NoiDung'); 
+            $table->integer('Xoa')->default(0);
             
             $table->timestamps();
         });

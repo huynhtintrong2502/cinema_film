@@ -17,6 +17,7 @@ class CreateSuatchieuTable extends Migration
             $table->integer('MaSC')->primary();
             $table->time('TGBatDau');
             $table->time('TGKetThuc');
+            $table->integer('Xoa')->default(0);
             $table->timestamps();
         });
     }
