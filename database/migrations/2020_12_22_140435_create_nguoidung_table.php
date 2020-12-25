@@ -20,6 +20,7 @@ class CreateNguoidungTable extends Migration
             $table->foreign('MaUT')->references('MaUT')->on('usertype');
             $table->string('UserName');
             $table->string('PassWord');
+            $table->integer('Xoa')->default(0);
             $table->timestamps();
         });
     }

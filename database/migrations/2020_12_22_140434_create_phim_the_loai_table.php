@@ -19,6 +19,7 @@ class CreatePhimTheLoaiTable extends Migration
             
             $table->integer('MaPhim');
             $table->foreign('MaPhim')->references('MaPhim')->on('phim');
+            $table->integer('Xoa')->default(0);
             $table->timestamps();
         });
     }

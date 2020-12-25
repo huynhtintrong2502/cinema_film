@@ -19,6 +19,7 @@ class CreateGheTable extends Migration
             $table->foreign('MaLoaiGhe')->references('MaLoaiGhe')->on('loaighe');
             $table->integer('MaRap');
             $table->foreign('MaRap')->references('MaRap')->on('rap');
+            $table->integer('Xoa')->default(0);
             $table->timestamps();
         });
     }

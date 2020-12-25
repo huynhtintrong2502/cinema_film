@@ -17,6 +17,7 @@ class CreateNhacungcapTable extends Migration
             $table->integer('MaNCC')->primary();
             $table->string('TenNCC');
             $table->string('DiaChi');
+            $table->integer('Xoa')->default(0);
             $table->string('SDT');
 
             

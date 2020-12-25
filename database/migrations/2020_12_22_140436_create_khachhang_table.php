@@ -24,6 +24,7 @@ class CreateKhachhangTable extends Migration
             $table->string('DiaChi');
             $table->string('SDT');
             $table->string('Anh');
+            $table->integer('Xoa')->default(0);
                 
             $table->timestamps();
         });
