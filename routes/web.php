@@ -50,4 +50,8 @@ Route::get('list1',['uses'=>'SinhVienController@getList']);
 
 Route::get('list2',['uses'=>'usertypeController@getList']);
 
+// api trang chủ: index
+
+Route::get('phimmoi',['uses'=>'TrangChuController@PhimMoi']);
+
 

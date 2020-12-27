@@ -11,19 +11,21 @@ class NguoiDungSeeder extends Seeder
      */
     public function run()
     {
+        
         DB::table('nguoidung')->insert(
             [
                 [
                     'ID' => 1,
-                    'MaUT'=>'Admin',
-                    'UserName' => 1,
-                    'PassWord'=>'Admin',
+                    'MaUT'=>1,
+                    'UserName' => 'admin',
+                    'PassWord'=>'admin',
                     'created_at' =>new DateTime()
                 ],
                 [
                     'ID' => 2,
-                    'MaUT' => 2,
-                    'TenUT'=>'Người dùng',
+                    'MaUT'=>2,
+                    'UserName' => 'huyntintrong',
+                    'PassWord'=>'huyntintrong',
                     'created_at' =>new DateTime()
                 ]
             ]

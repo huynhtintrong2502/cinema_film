@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="en" ng-app="main-App">
+<html lang="en" ng-app="my-app">
 
 <head>
 	<meta charset="utf-8">
@@ -7,7 +7,6 @@
 
 	<!-- Font -->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600%7CUbuntu:300,400,500,700" rel="stylesheet">
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
 	<!-- CSS -->
 	<link type="text/css" rel="stylesheet" href="<?php echo asset('template/css/bootstrap-reboot.min.css') ; ?>" />
 	<link type="text/css" rel="stylesheet" href="<?php echo asset('template/css/bootstrap-grid.min.css') ; ?>" />
@@ -20,7 +19,7 @@
 	<link type="text/css" rel="stylesheet" href="<?php echo asset('template/css/default-skin.css') ; ?>" />
 	<link type="text/css" rel="stylesheet" href="<?php echo asset('template/css/main.css') ; ?>" />
 	
-	
+	<script type="text/javascript" src="<?php echo asset('app/lib/angular.min.js') ; ?>"></script>
 	
 
 	<!-- Favicons -->
@@ -36,7 +35,7 @@
 	<title>FlixGo – Online Movies, TV Shows & Cinema HTML Template</title>
 
 </head>
-<body class="body"  >	
+<body class="body"  ng-controller="IndexController">	
 	<!-- header -->
 	<header class="header">
 		<div class="header__wrap">
@@ -70,7 +69,7 @@
 									<ul class="dropdown-menu header__dropdown-menu" aria-labelledby="dropdownMenuCatalog">
 										<li><a href="#">Catalog Grid</a></li>
 										<li><a href="#">Catalog List</a></li>
-										<li><a href="#l">Details Movie</a></li>
+										<li><a href="#">Details Movie</a></li>
 										<li><a href="#">Details TV Series</a></li>
 									</ul>
 								</li>
@@ -158,7 +157,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-12">
-					<h1 class="home__title"><b>NEW ITEMS</b> OF THIS SEASON</h1>
+					<h1 class="home__title"><b>Phim mới</b></h1>
 
 					<button class="home__nav home__nav--prev" type="button">
 						<i class="icon ion-ios-arrow-round-back"></i>
@@ -169,7 +168,7 @@
 				</div>
 
 				<div class="col-12">
-					<div class="owl-carousel home__carousel">
+					<div class="owl-carousel home__carousel" ng-repeat="item in ListPhimMoi">
 						<div class="item">
 							<!-- card -->
 							<div class="card card--big">
@@ -180,78 +179,18 @@
 									</a>
 								</div>
 								<div class="card__content">
-									<h3 class="card__title"><a href="#">I Dream in Another Language</a></h3>
+									<h3 class="card__title"><a href="#">{{item.TenPhim}}</a></h3>
 									<span class="card__category">
 										<a href="#">Action</a>
 										<a href="#">Triler</a>
 									</span>
-									<span class="card__rate"><i class="icon ion-ios-star"></i>8.4</span>
+									<span class="card__rate"><i class="icon ion-ios-star"></i>{{item.DanhGia}}</span>
 								</div>
 							</div>
 							<!-- end card -->
 						</div>
 
-						<div class="item">
-							<!-- card -->
-							<div class="card card--big">
-								<div class="card__cover">
-									<img src="<?php echo asset('template/img/covers/cover2.jpg') ; ?>" alt="">
-									<a href="#" class="card__play">
-										<i class="icon ion-ios-play"></i>
-									</a>
-								</div>
-								<div class="card__content">
-									<h3 class="card__title"><a href="#">Benched</a></h3>
-									<span class="card__category">
-										<a href="#">Comedy</a>
-									</span>
-									<span class="card__rate"><i class="icon ion-ios-star"></i>7.1</span>
-								</div>
-							</div>
-							<!-- end card -->
-						</div>
-
-						<div class="item">
-							<!-- card -->
-							<div class="card card--big">
-								<div class="card__cover">
-									<img src="<?php echo asset('template/img/covers/cover3.jpg') ; ?>" alt="">
-									<a href="#" class="card__play">
-										<i class="icon ion-ios-play"></i>
-									</a>
-								</div>
-								<div class="card__content">
-									<h3 class="card__title"><a href="#">Whitney</a></h3>
-									<span class="card__category">
-										<a href="#">Romance</a>
-										<a href="#">Drama</a>
-									</span>
-									<span class="card__rate"><i class="icon ion-ios-star"></i>6.3</span>
-								</div>
-							</div>
-							<!-- end card -->
-						</div>
-
-						<div class="item">
-							<!-- card -->
-							<div class="card card--big">
-								<div class="card__cover">
-									<img src="<?php echo asset('template/img/covers/cover4.jpg') ; ?>" alt="">
-									<a href="#" class="card__play">
-										<i class="icon ion-ios-play"></i>
-									</a>
-								</div>
-								<div class="card__content">
-									<h3 class="card__title"><a href="#">Blindspotting</a></h3>
-									<span class="card__category">
-										<a href="#">Comedy</a>
-										<a href="#">Drama</a>
-									</span>
-									<span class="card__rate"><i class="icon ion-ios-star"></i>7.9</span>
-								</div>
-							</div>
-							<!-- end card -->
-						</div>
+						
 					</div>
 				</div>
 			</div>
@@ -1635,7 +1574,7 @@
 	<script src="<?php echo asset('template/js/photoswipe.min.js') ; ?>"></script>
 	<script src="<?php echo asset('template/js/photoswipe-ui-default.min.js') ; ?>"></script>
 	<script src="<?php echo asset('template/js/main.js') ; ?>"></script>
-	<script type="text/javascript" src="<?php echo asset('app/lib/angular.min.js') ; ?>"></script>
+	
 	<script type="text/javascript" src="<?php echo asset('app/app.js') ; ?>"></script>
 
 	

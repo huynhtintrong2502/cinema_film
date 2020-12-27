@@ -19,6 +19,7 @@ class CreateCommentTable extends Migration
             $table->foreign('MaPhim')->references('MaPhim')->on('phim');
             $table->integer('MaKH');
             $table->foreign('MaKH')->references('MaKH')->on('khachhang');
+            $table->dateTime('ThoiGianCMT');
             $table->double('DanhGia');
             $table->string('NoiDung'); 
             $table->integer('Xoa')->default(0);

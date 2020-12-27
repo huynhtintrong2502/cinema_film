@@ -21,6 +21,7 @@ class CreateNhanvienTable extends Migration
             $table->string('CMND');
             $table->string('DiaChi');
             $table->string('SDT');
+            $table->date('NgaySinh');
             $table->date('NgayBD');
             $table->string('Anh');
             $table->integer('Xoa')->default(0);

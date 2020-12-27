@@ -21,6 +21,7 @@ class CreateKhachhangTable extends Migration
             $table->foreign('ID')->references('ID')->on('nguoidung');
             $table->string('TenKH');
             $table->string('CMND');
+            $table->date('NgaySinh');
             $table->string('DiaChi');
             $table->string('SDT');
             $table->string('Anh');

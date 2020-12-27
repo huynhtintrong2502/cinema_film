@@ -4,8 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class User_Type extends Model
+class phim extends Model
 {
-    protected $table = 'USER_TYPE';
+    protected $table = 'phim';
     protected $guarded = [];
 }

@@ -13,7 +13,21 @@ class DatabaseSeeder extends Seeder
     {
          $this->call(
             UserTypeSeeder::class,
-            NguoiDungSeeder::class
+            NguoiDungSeeder::class,
+            CommentSeeder::class,
+            GheSeeder::class,
+            KhachHangSeeder::class,
+            LoaiGheSeeder::class,
+            LoaiKhachHangSeeder::class,
+            LuongSeeder::class,
+            NhaCungCapSeeder::class,
+            NhanVienSeeder::class,
+            PhimSeeder::class,
+            PhimTheLoaiSeeder::class,
+            RapSeeder::class,
+            SuatChieuSeeder::class,
+            TheLoaiSeeder::class,
+            VeSeeder::class
         );
     }
 }
