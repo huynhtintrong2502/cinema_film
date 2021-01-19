@@ -15,7 +15,6 @@ class NhanVienSeeder extends Seeder
             [
                 [
                     
-                    'MaNV' => 'NV001',
                     'ID' => 1,
                     'TenNV'=>'Huỳnh Tín Trọng',
                     'CMND'=>'12345676789',

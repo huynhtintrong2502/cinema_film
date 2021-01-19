@@ -1,823 +1,567 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html ng-app="xemchitiet-app">
 
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<head >
+    <!-- Basic Page Needs -->
+    <meta charset="utf-8">
+    <title>AMovie - Movie page</title>
+    <meta name="description" content="A Template by Gozha.net">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="author" content="Gozha.net">
 
-	<!-- Font -->
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600%7CUbuntu:300,400,500,700" rel="stylesheet"> 
+    <!-- Mobile Specific Metas-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="telephone=no" name="format-detection">
 
-	<!-- CSS -->
-	<link type="text/css" rel="stylesheet" href="<?php echo asset('template/css/bootstrap-reboot.min.css') ; ?>" />
-	<link type="text/css" rel="stylesheet" href="<?php echo asset('template/css/bootstrap-grid.min.css') ; ?>" />
-	<link type="text/css" rel="stylesheet" href="<?php echo asset('template/css/owl.carousel.min.css') ; ?>" />
-	<link type="text/css" rel="stylesheet" href="<?php echo asset('template/css/jquery.mCustomScrollbar.min.css') ; ?>" />
-	<link type="text/css" rel="stylesheet" href="<?php echo asset('template/css/nouislider.min.css') ; ?>" />
-	<link type="text/css" rel="stylesheet" href="<?php echo asset('template/css/ionicons.min.css') ; ?>" />
-	<link type="text/css" rel="stylesheet" href="<?php echo asset('template/css/plyr.css') ; ?>" />
-	<link type="text/css" rel="stylesheet" href="<?php echo asset('template/css/photoswipe.css') ; ?>" />
-	<link type="text/css" rel="stylesheet" href="<?php echo asset('template/css/default-skin.css') ; ?>" />
-	<link type="text/css" rel="stylesheet" href="<?php echo asset('template/css/main.css') ; ?>" />
-	
-	
+    <!-- Fonts -->
+    <!-- Font awesome - icon font -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Roboto -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
 
-	<!-- Favicons -->
-	<link rel="icon" type="image/png" href="<?php echo asset('template/icon/favicon-32x32.png') ; ?>" sizes="32x32">
-	<link rel="apple-touch-icon" href="<?php echo asset('template/icon/favicon-32x32.png') ; ?>">
-	<link rel="apple-touch-icon" sizes="72x72" href="<?php echo asset('template/icon/apple-touch-icon-72x72.png') ; ?>">
-	<link rel="apple-touch-icon" sizes="114x114" href="<?php echo asset('template/icon/apple-touch-icon-114x114.png') ; ?>">
-	<link rel="apple-touch-icon" sizes="144x144" href="<?php echo asset('template/icon/apple-touch-icon-144x144.png') ; ?>">
+    <!-- Stylesheets -->
+    <!-- jQuery UI -->
+    <link href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css" rel="stylesheet">
 
-	<meta name="description" content="">
-	<meta name="keywords" content="">
-	<meta name="author" content="Dmitry Volkov">
-	<title>FlixGo – Online Movies, TV Shows & Cinema HTML Template</title>
+    <!-- Mobile menu -->
+    <link href="<?php echo asset('template/css/gozha-nav.css') ; ?>" rel="stylesheet" />
+    <!-- Select -->
+    <link href="<?php echo asset('template/css/external/jquery.selectbox.css') ; ?>" rel="stylesheet" />
+    <!-- Swiper slider -->
+    <link href="<?php echo asset('template/css/external/idangerous.swiper.css') ; ?>" rel="stylesheet" />
+    <!-- Magnific-popup -->
+    <link href="<?php echo asset('template/css/external/magnific-popup.css') ; ?>" rel="stylesheet" />
 
+
+    <!-- Custom -->
+    <link href="<?php echo asset('template/css/style.css?v=1') ; ?>" rel="stylesheet" />
+
+    <!-- Modernizr -->
+    <script src="<?php echo asset('template/js/external/modernizr.custom.js') ; ?>"></script>
+
+    <script type="text/javascript" src="<?php echo asset('app/lib/angular.min.js') ; ?>"></script>
 </head>
-<body class="body">
-	
-	<!-- header -->
-	<header class="header">
-		<div class="header__wrap">
-			<div class="container">
-				<div class="row">
-					<div class="col-12">
-						<div class="header__content">
-							<!-- header logo -->
-							<a href="index.html" class="header__logo">
-								<img src="img/logo.svg" alt="">
-							</a>
-							<!-- end header logo -->
-
-							<!-- header nav -->
-							<ul class="header__nav">
-								<!-- dropdown -->
-								<li class="header__nav-item">
-									<a class="dropdown-toggle header__nav-link" href="#" role="button" id="dropdownMenuHome" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Home</a>
-
-									<ul class="dropdown-menu header__dropdown-menu" aria-labelledby="dropdownMenuHome">
-										<li><a href="index.html">Home slideshow bg</a></li>
-										<li><a href="index2.html">Home static bg</a></li>
-									</ul>
-								</li>
-								<!-- end dropdown -->
-
-								<!-- dropdown -->
-								<li class="header__nav-item">
-									<a class="dropdown-toggle header__nav-link" href="#" role="button" id="dropdownMenuCatalog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Catalog</a>
-
-									<ul class="dropdown-menu header__dropdown-menu" aria-labelledby="dropdownMenuCatalog">
-										<li><a href="catalog1.html">Catalog Grid</a></li>
-										<li><a href="catalog2.html">Catalog List</a></li>
-										<li><a href="details1.html">Details Movie</a></li>
-										<li><a href="details2.html">Details TV Series</a></li>
-									</ul>
-								</li>
-								<!-- end dropdown -->
-
-								<li class="header__nav-item">
-									<a href="pricing.html" class="header__nav-link">Pricing Plan</a>
-								</li>
-
-								<li class="header__nav-item">
-									<a href="faq.html" class="header__nav-link">Help</a>
-								</li>
-
-								<!-- dropdown -->
-								<li class="dropdown header__nav-item">
-									<a class="dropdown-toggle header__nav-link header__nav-link--more" href="#" role="button" id="dropdownMenuMore" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="icon ion-ios-more"></i></a>
-
-									<ul class="dropdown-menu header__dropdown-menu" aria-labelledby="dropdownMenuMore">
-										<li><a href="about.html">About</a></li>
-										<li><a href="signin.html">Sign In</a></li>
-										<li><a href="signup.html">Sign Up</a></li>
-										<li><a href="404.html">404 Page</a></li>
-									</ul>
-								</li>
-								<!-- end dropdown -->
-							</ul>
-							<!-- end header nav -->
-
-							<!-- header auth -->
-							<div class="header__auth">
-								<button class="header__search-btn" type="button">
-									<i class="icon ion-ios-search"></i>
-								</button>
-
-								<a href="signin.html" class="header__sign-in">
-									<i class="icon ion-ios-log-in"></i>
-									<span>sign in</span>
-								</a>
-							</div>
-							<!-- end header auth -->
-
-							<!-- header menu btn -->
-							<button class="header__btn" type="button">
-								<span></span>
-								<span></span>
-								<span></span>
-							</button>
-							<!-- end header menu btn -->
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<!-- header search -->
-		<form action="#" class="header__search">
-			<div class="container">
-				<div class="row">
-					<div class="col-12">
-						<div class="header__search-content">
-							<input type="text" placeholder="Search for a movie, TV Series that you are looking for">
-
-							<button type="button">search</button>
-						</div>
-					</div>
-				</div>
-			</div>
-		</form>
-		<!-- end header search -->
-	</header>
-	<!-- end header -->
-
-	<!-- details -->
-	<section class="section details">
-		<!-- details background -->
-		<div class="details__bg" data-bg="img/home/home__bg.jpg"></div>
-		<!-- end details background -->
-
-		<!-- details content -->
-		<div class="container">
-			<div class="row">
-				<!-- title -->
-				<div class="col-12">
-					<h1 class="details__title">I Dream in Another Language</h1>
-				</div>
-				<!-- end title -->
-
-				<!-- content -->
-				<div class="col-12 col-xl-6">
-					<div class="card card--details">
-						<div class="row">
-							<!-- card cover -->
-							<div class="col-12 col-sm-4 col-md-4 col-lg-3 col-xl-5">
-								<div class="card__cover">
-									<img src="img/covers/cover.jpg" alt="">
-								</div>
-							</div>
-							<!-- end card cover -->
-
-							<!-- card content -->
-							<div class="col-12 col-sm-8 col-md-8 col-lg-9 col-xl-7">
-								<div class="card__content">
-									<div class="card__wrap">
-										<span class="card__rate"><i class="icon ion-ios-star"></i>8.4</span>
-
-										<ul class="card__list">
-											<li>HD</li>
-											<li>16+</li>
-										</ul>
-									</div>
-
-									<ul class="card__meta">
-										<li><span>Genre:</span> <a href="#">Action</a>
-										<a href="#">Triler</a></li>
-										<li><span>Release year:</span> 2017</li>
-										<li><span>Running time:</span> 120 min</li>
-										<li><span>Country:</span> <a href="#">USA</a> </li>
-									</ul>
-
-									<div class="card__description card__description--details">
-										It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy.
-									</div>
-								</div>
-							</div>
-							<!-- end card content -->
-						</div>
-					</div>
-				</div>
-				<!-- end content -->
-
-				<!-- player -->
-				<div class="col-12 col-xl-6">
-					<video controls crossorigin playsinline poster="../../../cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.jpg" id="player">
-						<!-- Video files -->
-						<source src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4" type="video/mp4" size="576">
-						<source src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-720p.mp4" type="video/mp4" size="720">
-						<source src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-1080p.mp4" type="video/mp4" size="1080">
-						<source src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-1440p.mp4" type="video/mp4" size="1440">
-
-						<!-- Caption files -->
-						<track kind="captions" label="English" srclang="en" src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.en.vtt"
-						    default>
-						<track kind="captions" label="Français" srclang="fr" src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.fr.vtt">
-
-						<!-- Fallback for browsers that don't support the <video> element -->
-						<a href="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4" download>Download</a>
-					</video>
-				</div>
-				<!-- end player -->
-
-				<div class="col-12">
-					<div class="details__wrap">
-						<!-- availables -->
-						<div class="details__devices">
-							<span class="details__devices-title">Available on devices:</span>
-							<ul class="details__devices-list">
-								<li><i class="icon ion-logo-apple"></i><span>IOS</span></li>
-								<li><i class="icon ion-logo-android"></i><span>Android</span></li>
-								<li><i class="icon ion-logo-windows"></i><span>Windows</span></li>
-								<li><i class="icon ion-md-tv"></i><span>Smart TV</span></li>
-							</ul>
-						</div>
-						<!-- end availables -->
-
-						<!-- share -->
-						<div class="details__share">
-							<span class="details__share-title">Share with friends:</span>
-
-							<ul class="details__share-list">
-								<li class="facebook"><a href="#"><i class="icon ion-logo-facebook"></i></a></li>
-								<li class="instagram"><a href="#"><i class="icon ion-logo-instagram"></i></a></li>
-								<li class="twitter"><a href="#"><i class="icon ion-logo-twitter"></i></a></li>
-								<li class="vk"><a href="#"><i class="icon ion-logo-vk"></i></a></li>
-							</ul>
-						</div>
-						<!-- end share -->
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- end details content -->
-	</section>
-	<!-- end details -->
-
-	<!-- content -->
-	<section class="content">
-		<div class="content__head">
-			<div class="container">
-				<div class="row">
-					<div class="col-12">
-						<!-- content title -->
-						<h2 class="content__title">Discover</h2>
-						<!-- end content title -->
-
-						<!-- content tabs nav -->
-						<ul class="nav nav-tabs content__tabs" id="content__tabs" role="tablist">
-							<li class="nav-item">
-								<a class="nav-link active" data-toggle="tab" href="#tab-1" role="tab" aria-controls="tab-1" aria-selected="true">Comments</a>
-							</li>
-
-							<li class="nav-item">
-								<a class="nav-link" data-toggle="tab" href="#tab-2" role="tab" aria-controls="tab-2" aria-selected="false">Reviews</a>
-							</li>
-
-							<li class="nav-item">
-								<a class="nav-link" data-toggle="tab" href="#tab-3" role="tab" aria-controls="tab-3" aria-selected="false">Photos</a>
-							</li>
-						</ul>
-						<!-- end content tabs nav -->
-
-						<!-- content mobile tabs nav -->
-						<div class="content__mobile-tabs" id="content__mobile-tabs">
-							<div class="content__mobile-tabs-btn dropdown-toggle" role="navigation" id="mobile-tabs" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								<input type="button" value="Comments">
-								<span></span>
-							</div>
-
-							<div class="content__mobile-tabs-menu dropdown-menu" aria-labelledby="mobile-tabs">
-								<ul class="nav nav-tabs" role="tablist">
-									<li class="nav-item"><a class="nav-link active" id="1-tab" data-toggle="tab" href="#tab-1" role="tab" aria-controls="tab-1" aria-selected="true">Comments</a></li>
-
-									<li class="nav-item"><a class="nav-link" id="2-tab" data-toggle="tab" href="#tab-2" role="tab" aria-controls="tab-2" aria-selected="false">Reviews</a></li>
-
-									<li class="nav-item"><a class="nav-link" id="3-tab" data-toggle="tab" href="#tab-3" role="tab" aria-controls="tab-3" aria-selected="false">Photos</a></li>
-								</ul>
-							</div>
-						</div>
-						<!-- end content mobile tabs nav -->
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div class="container">
-			<div class="row">
-				<div class="col-12 col-lg-8 col-xl-8">
-					<!-- content tabs -->
-					<div class="tab-content" id="myTabContent">
-						<div class="tab-pane fade show active" id="tab-1" role="tabpanel" aria-labelledby="1-tab">
-							<div class="row">
-								<!-- comments -->
-								<div class="col-12">
-									<div class="comments">
-										<ul class="comments__list">
-											<li class="comments__item">
-												<div class="comments__autor">
-													<img class="comments__avatar" src="img/user.png" alt="">
-													<span class="comments__name">John Doe</span>
-													<span class="comments__time">30.08.2018, 17:53</span>
-												</div>
-												<p class="comments__text">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
-												<div class="comments__actions">
-													<div class="comments__rate">
-														<button type="button"><i class="icon ion-md-thumbs-up"></i>12</button>
-
-														<button type="button">7<i class="icon ion-md-thumbs-down"></i></button>
-													</div>
-
-													<button type="button"><i class="icon ion-ios-share-alt"></i>Reply</button>
-													<button type="button"><i class="icon ion-ios-quote"></i>Quote</button>
-												</div>
-											</li>
-
-											<li class="comments__item comments__item--answer">
-												<div class="comments__autor">
-													<img class="comments__avatar" src="img/user.png" alt="">
-													<span class="comments__name">John Doe</span>
-													<span class="comments__time">24.08.2018, 16:41</span>
-												</div>
-												<p class="comments__text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-												<div class="comments__actions">
-													<div class="comments__rate">
-														<button type="button"><i class="icon ion-md-thumbs-up"></i>8</button>
-
-														<button type="button">3<i class="icon ion-md-thumbs-down"></i></button>
-													</div>
-
-													<button type="button"><i class="icon ion-ios-share-alt"></i>Reply</button>
-													<button type="button"><i class="icon ion-ios-quote"></i>Quote</button>
-												</div>
-											</li>
-
-											<li class="comments__item comments__item--quote">
-												<div class="comments__autor">
-													<img class="comments__avatar" src="img/user.png" alt="">
-													<span class="comments__name">John Doe</span>
-													<span class="comments__time">11.08.2018, 11:11</span>
-												</div>
-												<p class="comments__text"><span>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</span>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-												<div class="comments__actions">
-													<div class="comments__rate">
-														<button type="button"><i class="icon ion-md-thumbs-up"></i>11</button>
-
-														<button type="button">1<i class="icon ion-md-thumbs-down"></i></button>
-													</div>
-
-													<button type="button"><i class="icon ion-ios-share-alt"></i>Reply</button>
-													<button type="button"><i class="icon ion-ios-quote"></i>Quote</button>
-												</div>
-											</li>
-
-											<li class="comments__item">
-												<div class="comments__autor">
-													<img class="comments__avatar" src="img/user.png" alt="">
-													<span class="comments__name">John Doe</span>
-													<span class="comments__time">07.08.2018, 14:33</span>
-												</div>
-												<p class="comments__text">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
-												<div class="comments__actions">
-													<div class="comments__rate">
-														<button type="button"><i class="icon ion-md-thumbs-up"></i>99</button>
-
-														<button type="button">35<i class="icon ion-md-thumbs-down"></i></button>
-													</div>
-
-													<button type="button"><i class="icon ion-ios-share-alt"></i>Reply</button>
-													<button type="button"><i class="icon ion-ios-quote"></i>Quote</button>
-												</div>
-											</li>
-
-											<li class="comments__item">
-												<div class="comments__autor">
-													<img class="comments__avatar" src="img/user.png" alt="">
-													<span class="comments__name">John Doe</span>
-													<span class="comments__time">02.08.2018, 15:24</span>
-												</div>
-												<p class="comments__text">Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
-												<div class="comments__actions">
-													<div class="comments__rate">
-														<button type="button"><i class="icon ion-md-thumbs-up"></i>74</button>
-
-														<button type="button">13<i class="icon ion-md-thumbs-down"></i></button>
-													</div>
-													
-													<button type="button"><i class="icon ion-ios-share-alt"></i>Reply</button>
-													<button type="button"><i class="icon ion-ios-quote"></i>Quote</button>
-												</div>
-											</li>
-										</ul>
-
-										<form action="#" class="form">
-											<textarea id="text" name="text" class="form__textarea" placeholder="Add comment"></textarea>
-											<button type="button" class="form__btn">Send</button>
-										</form>
-									</div>
-								</div>
-								<!-- end comments -->
-							</div>
-						</div>
-
-						<div class="tab-pane fade" id="tab-2" role="tabpanel" aria-labelledby="2-tab">
-							<div class="row">
-								<!-- reviews -->
-								<div class="col-12">
-									<div class="reviews">
-										<ul class="reviews__list">
-											<li class="reviews__item">
-												<div class="reviews__autor">
-													<img class="reviews__avatar" src="img/user.png" alt="">
-													<span class="reviews__name">Best Marvel movie in my opinion</span>
-													<span class="reviews__time">24.08.2018, 17:53 by John Doe</span>
-
-													<span class="reviews__rating"><i class="icon ion-ios-star"></i>8.4</span>
-												</div>
-												<p class="reviews__text">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
-											</li>
-
-											<li class="reviews__item">
-												<div class="reviews__autor">
-													<img class="reviews__avatar" src="img/user.png" alt="">
-													<span class="reviews__name">Best Marvel movie in my opinion</span>
-													<span class="reviews__time">24.08.2018, 17:53 by John Doe</span>
-
-													<span class="reviews__rating"><i class="icon ion-ios-star"></i>9.0</span>
-												</div>
-												<p class="reviews__text">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
-											</li>
-
-											<li class="reviews__item">
-												<div class="reviews__autor">
-													<img class="reviews__avatar" src="img/user.png" alt="">
-													<span class="reviews__name">Best Marvel movie in my opinion</span>
-													<span class="reviews__time">24.08.2018, 17:53 by John Doe</span>
-
-													<span class="reviews__rating"><i class="icon ion-ios-star"></i>7.5</span>
-												</div>
-												<p class="reviews__text">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
-											</li>
-										</ul>
-
-										<form action="#" class="form">
-											<input type="text" class="form__input" placeholder="Title">
-											<textarea class="form__textarea" placeholder="Review"></textarea>
-											<div class="form__slider">
-												<div class="form__slider-rating" id="slider__rating"></div>
-												<div class="form__slider-value" id="form__slider-value"></div>
-											</div>
-											<button type="button" class="form__btn">Send</button>
-										</form>
-									</div>
-								</div>
-								<!-- end reviews -->
-							</div>
-						</div>
-
-						<div class="tab-pane fade" id="tab-3" role="tabpanel" aria-labelledby="3-tab">
-							<!-- project gallery -->
-							<div class="gallery" itemscope>
-								<div class="row">
-									<!-- gallery item -->
-									<figure class="col-12 col-sm-6 col-xl-4" itemprop="associatedMedia" itemscope>
-										<a href="img/gallery/project-1.jpg" itemprop="contentUrl" data-size="1920x1280">
-											<img src="img/gallery/project-1.jpg" itemprop="thumbnail" alt="Image description" />
-										</a>
-										<figcaption itemprop="caption description">Some image caption 1</figcaption>
-									</figure>
-									<!-- end gallery item -->
-
-									<!-- gallery item -->
-									<figure class="col-12 col-sm-6 col-xl-4" itemprop="associatedMedia" itemscope>
-										<a href="img/gallery/project-2.jpg" itemprop="contentUrl" data-size="1920x1280">
-											<img src="img/gallery/project-2.jpg" itemprop="thumbnail" alt="Image description" />
-										</a>
-										<figcaption itemprop="caption description">Some image caption 2</figcaption>
-									</figure>
-									<!-- end gallery item -->
-
-									<!-- gallery item -->
-									<figure class="col-12 col-sm-6 col-xl-4" itemprop="associatedMedia" itemscope>
-										<a href="img/gallery/project-3.jpg" itemprop="contentUrl" data-size="1920x1280">
-											<img src="img/gallery/project-3.jpg" itemprop="thumbnail" alt="Image description" />
-										</a>
-										<figcaption itemprop="caption description">Some image caption 3</figcaption>
-									</figure>
-									<!-- end gallery item -->
-
-									<!-- gallery item -->
-									<figure class="col-12 col-sm-6 col-xl-4" itemprop="associatedMedia" itemscope>
-										<a href="img/gallery/project-4.jpg" itemprop="contentUrl" data-size="1920x1280">
-											<img src="img/gallery/project-4.jpg" itemprop="thumbnail" alt="Image description" />
-										</a>
-										<figcaption itemprop="caption description">Some image caption 4</figcaption>
-									</figure>
-									<!-- end gallery item -->
-
-									<!-- gallery item -->
-									<figure class="col-12 col-sm-6 col-xl-4" itemprop="associatedMedia" itemscope>
-										<a href="img/gallery/project-5.jpg" itemprop="contentUrl" data-size="1920x1280">
-											<img src="img/gallery/project-5.jpg" itemprop="thumbnail" alt="Image description" />
-										</a>
-										<figcaption itemprop="caption description">Some image caption 5</figcaption>
-									</figure>
-									<!-- end gallery item -->
-
-									<!-- gallery item -->
-									<figure class="col-12 col-sm-6 col-xl-4" itemprop="associatedMedia" itemscope>
-										<a href="img/gallery/project-6.jpg" itemprop="contentUrl" data-size="1920x1280">
-											<img src="img/gallery/project-6.jpg" itemprop="thumbnail" alt="Image description" />
-										</a>
-										<figcaption itemprop="caption description">Some image caption 6</figcaption>
-									</figure>
-									<!-- end gallery item -->
-								</div>
-							</div>
-							<!-- end project gallery -->
-						</div>
-					</div>
-					<!-- end content tabs -->
-				</div>
-
-				<!-- sidebar -->
-				<div class="col-12 col-lg-4 col-xl-4">
-					<div class="row">
-						<!-- section title -->
-						<div class="col-12">
-							<h2 class="section__title section__title--sidebar">You may also like...</h2>
-						</div>
-						<!-- end section title -->
-
-						<!-- card -->
-						<div class="col-6 col-sm-4 col-lg-6">
-							<div class="card">
-								<div class="card__cover">
-									<img src="img/covers/cover.jpg" alt="">
-									<a href="#" class="card__play">
-										<i class="icon ion-ios-play"></i>
-									</a>
-								</div>
-								<div class="card__content">
-									<h3 class="card__title"><a href="#">I Dream in Another Language</a></h3>
-									<span class="card__category">
-										<a href="#">Action</a>
-										<a href="#">Triler</a>
-									</span>
-									<span class="card__rate"><i class="icon ion-ios-star"></i>8.4</span>
-								</div>
-							</div>
-						</div>
-						<!-- end card -->
-
-						<!-- card -->
-						<div class="col-6 col-sm-4 col-lg-6">
-							<div class="card">
-								<div class="card__cover">
-									<img src="img/covers/cover2.jpg" alt="">
-									<a href="#" class="card__play">
-										<i class="icon ion-ios-play"></i>
-									</a>
-								</div>
-								<div class="card__content">
-									<h3 class="card__title"><a href="#">Benched</a></h3>
-									<span class="card__category">
-										<a href="#">Comedy</a>
-									</span>
-									<span class="card__rate"><i class="icon ion-ios-star"></i>7.1</span>
-								</div>
-							</div>
-						</div>
-						<!-- end card -->
-
-						<!-- card -->
-						<div class="col-6 col-sm-4 col-lg-6">
-							<div class="card">
-								<div class="card__cover">
-									<img src="img/covers/cover3.jpg" alt="">
-									<a href="#" class="card__play">
-										<i class="icon ion-ios-play"></i>
-									</a>
-								</div>
-								<div class="card__content">
-									<h3 class="card__title"><a href="#">Whitney</a></h3>
-									<span class="card__category">
-										<a href="#">Romance</a>
-										<a href="#">Drama</a>
-										<a href="#">Music</a>
-									</span>
-									<span class="card__rate"><i class="icon ion-ios-star"></i>6.3</span>
-								</div>
-							</div>
-						</div>
-						<!-- end card -->
-
-						<!-- card -->
-						<div class="col-6 col-sm-4 col-lg-6">
-							<div class="card">
-								<div class="card__cover">
-									<img src="img/covers/cover4.jpg" alt="">
-									<a href="#" class="card__play">
-										<i class="icon ion-ios-play"></i>
-									</a>
-								</div>
-								<div class="card__content">
-									<h3 class="card__title"><a href="#">Blindspotting</a></h3>
-									<span class="card__category">
-										<a href="#">Comedy</a>
-										<a href="#">Drama</a>
-									</span>
-									<span class="card__rate"><i class="icon ion-ios-star"></i>7.9</span>
-								</div>
-							</div>
-						</div>
-						<!-- end card -->
-
-						<!-- card -->
-						<div class="col-6 col-sm-4 col-lg-6">
-							<div class="card">
-								<div class="card__cover">
-									<img src="img/covers/cover5.jpg" alt="">
-									<a href="#" class="card__play">
-										<i class="icon ion-ios-play"></i>
-									</a>
-								</div>
-								<div class="card__content">
-									<h3 class="card__title"><a href="#">I Dream in Another Language</a></h3>
-									<span class="card__category">
-										<a href="#">Action</a>
-										<a href="#">Triler</a>
-									</span>
-									<span class="card__rate"><i class="icon ion-ios-star"></i>8.4</span>
-								</div>
-							</div>
-						</div>
-						<!-- end card -->
-
-						<!-- card -->
-						<div class="col-6 col-sm-4 col-lg-6">
-							<div class="card">
-								<div class="card__cover">
-									<img src="img/covers/cover6.jpg" alt="">
-									<a href="#" class="card__play">
-										<i class="icon ion-ios-play"></i>
-									</a>
-								</div>
-								<div class="card__content">
-									<h3 class="card__title"><a href="#">Benched</a></h3>
-									<span class="card__category">
-										<a href="#">Comedy</a>
-									</span>
-									<span class="card__rate"><i class="icon ion-ios-star"></i>7.1</span>
-								</div>
-							</div>
-						</div>
-						<!-- end card -->
-					</div>
-				</div>
-				<!-- end sidebar -->
-			</div>
-		</div>
-	</section>
-	<!-- end content -->
-
-	<!-- footer -->
-	<footer class="footer">
-		<div class="container">
-			<div class="row">
-				<!-- footer list -->
-				<div class="col-12 col-md-3">
-					<h6 class="footer__title">Download Our App</h6>
-					<ul class="footer__app">
-						<li><a href="#"><img src="img/Download_on_the_App_Store_Badge.svg" alt=""></a></li>
-						<li><a href="#"><img src="img/google-play-badge.png" alt=""></a></li>
-					</ul>
-				</div>
-				<!-- end footer list -->
-
-				<!-- footer list -->
-				<div class="col-6 col-sm-4 col-md-3">
-					<h6 class="footer__title">Resources</h6>
-					<ul class="footer__list">
-						<li><a href="#">About Us</a></li>
-						<li><a href="#">Pricing Plan</a></li>
-						<li><a href="#">Help</a></li>
-					</ul>
-				</div>
-				<!-- end footer list -->
-
-				<!-- footer list -->
-				<div class="col-6 col-sm-4 col-md-3">
-					<h6 class="footer__title">Legal</h6>
-					<ul class="footer__list">
-						<li><a href="#">Terms of Use</a></li>
-						<li><a href="#">Privacy Policy</a></li>
-						<li><a href="#">Security</a></li>
-					</ul>
-				</div>
-				<!-- end footer list -->
-
-				<!-- footer list -->
-				<div class="col-12 col-sm-4 col-md-3">
-					<h6 class="footer__title">Contact</h6>
-					<ul class="footer__list">
-						<li><a href="tel:+18002345678">+1 (800) 234-5678</a></li>
-						<li><a href="mailto:support@moviego.com">support@flixgo.com</a></li>
-					</ul>
-					<ul class="footer__social">
-						<li class="facebook"><a href="#"><i class="icon ion-logo-facebook"></i></a></li>
-						<li class="instagram"><a href="#"><i class="icon ion-logo-instagram"></i></a></li>
-						<li class="twitter"><a href="#"><i class="icon ion-logo-twitter"></i></a></li>
-						<li class="vk"><a href="#"><i class="icon ion-logo-vk"></i></a></li>
-					</ul>
-				</div>
-				<!-- end footer list -->
-
-				<!-- footer copyright -->
-				<div class="col-12">
-					<div class="footer__copyright">
-						<small><a target="_blank" href="https://www.templateshub.net">Templates Hub</a></small>
-
-						<ul>
-							<li><a href="#">Terms of Use</a></li>
-							<li><a href="#">Privacy Policy</a></li>
-						</ul>
-					</div>
-				</div>
-				<!-- end footer copyright -->
-			</div>
-		</div>
-	</footer>
-	<!-- end footer -->
-
-	<!-- Root element of PhotoSwipe. Must have class pswp. -->
-	<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-
-		<!-- Background of PhotoSwipe. 
-		It's a separate element, as animating opacity is faster than rgba(). -->
-		<div class="pswp__bg"></div>
-
-		<!-- Slides wrapper with overflow:hidden. -->
-		<div class="pswp__scroll-wrap">
-
-			<!-- Container that holds slides. PhotoSwipe keeps only 3 slides in DOM to save memory. -->
-			<!-- don't modify these 3 pswp__item elements, data is added later on. -->
-			<div class="pswp__container">
-				<div class="pswp__item"></div>
-				<div class="pswp__item"></div>
-				<div class="pswp__item"></div>
-			</div>
-
-			<!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
-			<div class="pswp__ui pswp__ui--hidden">
-
-				<div class="pswp__top-bar">
-
-					<!--  Controls are self-explanatory. Order can be changed. -->
-
-					<div class="pswp__counter"></div>
-
-					<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-
-					<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-
-					<!-- Preloader -->
-					<div class="pswp__preloader">
-						<div class="pswp__preloader__icn">
-							<div class="pswp__preloader__cut">
-								<div class="pswp__preloader__donut"></div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
-
-				<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
-
-				<div class="pswp__caption">
-					<div class="pswp__caption__center"></div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<!-- JS -->
-	<script src="<?php echo asset('template/js/jquery-3.3.1.min.js') ; ?>"></script>
-	<script src="<?php echo asset('template/js/bootstrap.bundle.min.js') ; ?>"></script>
-	<script src="<?php echo asset('template/js/owl.carousel.min.js') ; ?>"></script>
-	<script src="<?php echo asset('template/js/jquery.mousewheel.min.js') ; ?>"></script>
-	<script src="<?php echo asset('template/js/jquery.mCustomScrollbar.min.js') ; ?>"></script>
-	<script src="<?php echo asset('template/js/wNumb.js') ; ?>"></script>
-	<script src="<?php echo asset('template/js/nouislider.min.js') ; ?>"></script>
-	<script src="<?php echo asset('template/js/plyr.min.js') ; ?>"></script>
-	<script src="<?php echo asset('template/js/jquery.morelines.min.js') ; ?>"></script>
-	<script src="<?php echo asset('template/js/photoswipe.min.js') ; ?>"></script>
-	<script src="<?php echo asset('template/js/photoswipe-ui-default.min.js') ; ?>"></script>
-	<script src="<?php echo asset('template/js/main.js') ; ?>"></script>
-	<script type="text/javascript" src="<?php echo asset('app/lib/angular.min.js') ; ?>"></script>
-	<script type="text/javascript" src="<?php echo asset('app/app.js') ; ?>"></script>
+
+<body ng-controller="xemchitietController">
+    <div class="wrapper">
+        <!-- Banner -->
+        <div class="banner-top">
+            <img alt='top banner' src="<?php echo asset('template/images/banners/bra.jpg') ; ?>">
+        </div>
+
+        <!-- Header section -->
+        <header class="header-wrapper">
+            <div class="container">
+                <!-- Logo link-->
+                <a href='/Cinema/public' class="logo">
+                    <img alt='logo' src="<?php echo asset('template/images/logo.png') ; ?>">
+                </a>
+
+                <!-- Main website navigation-->
+                <nav id="navigation-box">
+                    <!-- Toggle for mobile menu mode -->
+                    <a href="#" id="navigation-toggle">
+                        <span class="menu-icon">
+                            <span class="icon-toggle" role="button" aria-label="Toggle Navigation">
+                              <span class="lines"></span>
+                        </span>
+                        </span>
+                    </a>
+
+                    <!-- Link navigation -->
+                    <ul id="navigation">
+                        <li>
+                            <span class="sub-nav-toggle plus"></span>
+                            <a href="#">Pages</a>
+                            <ul>
+                                <li class="menu__nav-item"><a href="movie-page-left.html">Single movie (rigth sidebar)</a></li>
+                                <li class="menu__nav-item"><a href="movie-page-right.html">Single movie (left sidebar)</a></li>
+                                <li class="menu__nav-item"><a href="movie-page-full.html">Single movie (full widht)</a></li>
+                                <li class="menu__nav-item"><a href="movie-list-left.html">Movies list (rigth sidebar)</a></li>
+                                <li class="menu__nav-item"><a href="movie-list-right.html">Movies list (left sidebar)</a></li>
+                                <li class="menu__nav-item"><a href="movie-list-full.html">Movies list (full widht)</a></li>
+                                <li class="menu__nav-item"><a href="single-cinema.html">Single cinema</a></li>
+                                <li class="menu__nav-item"><a href="cinema-list.html">Cinemas list</a></li>
+                                <li class="menu__nav-item"><a href="trailer.html">Trailers</a></li>
+                                <li class="menu__nav-item"><a href="rates-left.html">Rates (rigth sidebar)</a></li>
+                                <li class="menu__nav-item"><a href="rates-right.html">Rates (left sidebar)</a></li>
+                                <li class="menu__nav-item"><a href="rates-full.html">Rates (full widht)</a></li>
+                                <li class="menu__nav-item"><a href="offers.html">Offers</a></li>
+                                <li class="menu__nav-item"><a href="contact.html">Contact us</a></li>
+                                <li class="menu__nav-item"><a href="404.html">404 error</a></li>
+                                <li class="menu__nav-item"><a href="coming-soon.html">Coming soon</a></li>
+                                <li class="menu__nav-item"><a href="login.html">Login/Registration</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span class="sub-nav-toggle plus"></span>
+                            <a href="page-elements.html">Features</a>
+                            <ul>
+                                <li class="menu__nav-item"><a href="typography.html">Typography</a></li>
+                                <li class="menu__nav-item"><a href="page-elements.html">Shortcodes</a></li>
+                                <li class="menu__nav-item"><a href="column.html">Columns</a></li>
+                                <li class="menu__nav-item"><a href="icon-font.html">Icons</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span class="sub-nav-toggle plus"></span>
+                            <a href="page-elements.html">Booking steps</a>
+                            <ul>
+                                <li class="menu__nav-item"><a href="book1.html">Booking step 1</a></li>
+                                <li class="menu__nav-item"><a href="book2.html">Booking step 2</a></li>
+                                <li class="menu__nav-item"><a href="book3-buy.html">Booking step 3 (buy)</a></li>
+                                <li class="menu__nav-item"><a href="book3-reserve.html">Booking step 3 (reserve)</a></li>
+                                <li class="menu__nav-item"><a href="book-final.html">Final ticket view</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span class="sub-nav-toggle plus"></span>
+                            <a href="gallery-four.html">Gallery</a>
+                            <ul>
+                                <li class="menu__nav-item"><a href="gallery-four.html">4 col gallery</a></li>
+                                <li class="menu__nav-item"><a href="gallery-three.html">3 col gallery</a></li>
+                                <li class="menu__nav-item"><a href="gallery-two.html">2 col gallery</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span class="sub-nav-toggle plus"></span>
+                            <a href="news-left.html">News</a>
+                            <ul>
+                                <li class="menu__nav-item"><a href="news-left.html">News (rigth sidebar)</a></li>
+                                <li class="menu__nav-item"><a href="news-right.html">News (left sidebar)</a></li>
+                                <li class="menu__nav-item"><a href="news-full.html">News (full widht)</a></li>
+                                <li class="menu__nav-item"><a href="single-page-left.html">Single post (rigth sidebar)</a></li>
+                                <li class="menu__nav-item"><a href="single-page-right.html">Single post (left sidebar)</a></li>
+                                <li class="menu__nav-item"><a href="single-page-full.html">Single post (full widht)</a></li>
+                            </ul>
+                        </li>
+
+                        
+                    </ul>
+                </nav>
+
+                <!-- Additional header buttons / Auth and direct link to booking-->
+                <div class="control-panel">
+                    <div class="auth auth--home">
+                      <div class="auth__show">
+                        <span class="auth__image">
+                          <img alt="" style="border-radius:50%" src="<?php echo asset('template/img_user/img_khachhang/{{Anh_user}}') ; ?>">
+                        </span>
+                      </div>
+                      <a href="#" class="btn btn--sign btn--singin">
+                          {{Ten_user}}
+                      </a>
+                        <ul class="auth__function">
+                            <li><a href="#" class="auth__function-item" ng-if="(Maus == 0)">Sign in</a></li>
+                            <li><a href="#" ng-if="(Maus == 0)" class="auth__function-item">Sign up</a></li>
+                            <li><a href="#" ng-if="(Maus != 0)" ng-click="settings()" class="auth__function-item">Settings</a></li>
+                            <li><a href="#" ng-if="(Maus != 0)" ng-click="DangXuat()" class="auth__function-item">Log out</a></li>
+                        </ul>
+
+                    </div>
+                    <a href="#" ng-click="next_dat_ve()" class="btn btn-md btn--warning btn--book btn-control--home " >Book a ticket</a>
+                </div>
+
+            </div>
+        </header>
+
+        <!-- Search bar -->
+        <div class="search-wrapper">
+            <div class="container container--add">
+                <form id='search-form' method='get' class="search">
+                    <input type="text" class="search__field" ng-model="search_text" placeholder="Search">
+                    <select name="sorting_item" id="search-sort" class="search__sort" tabindex="0">
+                        <option value="1" selected='selected'>Tên phim</option>
+                        <option value="2">Đạo diễn</option>
+                        <option value="3">Quốc gia</option>
+                        <option value="4">thể loại</option>
+                        <option value="5">Năm Sản xuất</option>
+                    </select>
+                    <button type='submit' ng-click="timkiem()" class="btn btn-md btn--danger search__button">search a movie</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Main content -->
+        <section class="container">
+            <div class="col-sm-12">
+                <div class="movie">
+                    <h2 class="page-heading">{{phimfirst.TenPhim}}</h2>
+
+                    <div class="movie__info">
+                        <div class="col-sm-4 col-md-3 movie-mobile">
+                            <div class="movie__images">
+                                <span class="movie__rating">{{phimfirst.DanhGia}}</span>
+                                <img alt='' src="<?php echo asset('template/img_phim/panel_phim/{{phimfirst.AnhHienThi}}') ; ?>">
+                            </div>
+                        </div>
+
+                        <div class="col-sm-8 col-md-9">
+                            <p class="movie__time">{{phimfirst.ThoiLuong}} min</p>
+
+                            <p class="movie__option"><strong>Country: </strong><a href="#">{{phimfirst.QuocGia}}</a></p>
+                            <p class="movie__option"><strong>Year: </strong><a href="#">{{phimfirst.NamSX}}</a></p>
+                            <p class="movie__option"><strong>Category: </strong><a href="#">{{phimfirst.TenTheLoai}}</a></p>
+                            <p class="movie__option"><strong>Release date: </strong>{{phimfirst.NgayMua}}</p>
+                            
+                            <p class="movie__option"><strong>Age restriction: </strong><a href="#">{{phimfirst.AgeDuocXem}}</a></p>
+
+                            <a href="#" class="comment-link">Comments:  {{count_Comment}}</a>
+
+                            <div class="movie__btns movie__btns--full">
+                                <a href="#" ng-click="next_dat_ve()" class="btn btn-md btn--warning">book a ticket for this movie</a>
+                                <a href="#" class="watchlist">Add to watchlist</a>
+                            </div>
+
+                            <div class="share">
+                                <span class="share__marker">Share: </span>
+                                <div class="addthis_toolbox addthis_default_style ">
+                                    <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+                                    <a class="addthis_button_tweet"></a>
+                                    <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="clearfix"></div>
+                    
+                    <h2 class="page-heading">The plot</h2>
+
+                    <p class="movie__describe">{{phimfirst.NoiDung}} </p>
+
+                    <h2 class="page-heading">photos &amp; videos</h2>
+
+                    <div class="movie__media">
+                        <div class="movie__media-switch">
+                            <a href="#" class="watchlist list--photo" data-filter='media-photo'>234 photos</a>
+                            <a href="#" class="watchlist list--video" data-filter='media-video'>10 videos</a>
+                        </div>
+
+                        <div class="swiper-container">
+                            <div class="swiper-wrapper">
+                                <!--First Slide-->
+                                <div class="swiper-slide media-video">
+                                    <a href='<?php echo asset('template/img_phim/img_trailer/{{imgtrailerfirst.Anh1}}') ; ?>' class="movie__media-item ">
+                                        <img alt='' src="<?php echo asset('template/img_phim/img_trailer/{{imgtrailerfirst.Anh1}}') ; ?>">
+                                    </a>
+                                </div>
+
+                                <!--Second Slide-->
+                                <div class="swiper-slide media-video">
+                                    <a href='<?php echo asset('template/img_phim/img_trailer/{{imgtrailerfirst.Anh2}}') ; ?>' class="movie__media-item">
+                                        <img alt='' src="<?php echo asset('template/img_phim/img_trailer/{{imgtrailerfirst.Anh2}}') ; ?>">
+                                    </a>
+                                </div>
+
+                                <!--Third Slide-->
+                                <div class="swiper-slide media-photo">
+                                    <a href='<?php echo asset('template/img_phim/img_trailer/{{imgtrailerfirst.Anh3}}') ; ?>' class="movie__media-item">
+                                        <img alt='' src="<?php echo asset('template/img_phim/img_trailer/{{imgtrailerfirst.Anh3}}') ; ?>">
+                                    </a>
+                                </div>
+
+                                <!--Four Slide-->
+                                <div class="swiper-slide media-photo">
+                                    <a href='<?php echo asset('template/img_phim/img_trailer/{{imgtrailerfirst.Anh4}}') ; ?>' class="movie__media-item">
+                                        <img alt='' src="<?php echo asset('template/img_phim/img_trailer/{{imgtrailerfirst.Anh4}}') ; ?>">
+                                    </a>
+                                </div>
+
+                                <!--Slide-->
+                                <div class="swiper-slide media-photo">
+                                    <a href='<?php echo asset('template/img_phim/img_trailer/{{imgtrailerfirst.Anh5}}') ; ?>' class="movie__media-item">
+                                        <img alt='' src="<?php echo asset('template/img_phim/img_trailer/{{imgtrailerfirst.Anh5}}') ; ?>">
+                                    </a>
+                                </div>
+
+                                <!--Slide-->
+                                <div class="swiper-slide media-photo">
+                                    <a href='<?php echo asset('template/img_phim/img_trailer/{{imgtrailerfirst.Anh6}}') ; ?>' class="movie__media-item">
+                                        <img alt='' src="<?php echo asset('template/img_phim/img_trailer/{{imgtrailerfirst.Anh6}}') ; ?>">
+                                    </a>
+                                </div>
+
+                                <!--First Slide-->
+                                <div class="swiper-slide media-video">
+                                    <a href='<?php echo asset('template/img_phim/img_trailer/{{imgtrailerfirst.Anh7}}') ; ?>' class="movie__media-item ">
+                                        <img alt='' src="<?php echo asset('template/img_phim/img_trailer/{{imgtrailerfirst.Anh7}}') ; ?>">
+                                    </a>
+                                </div>
+
+                                <!--Second Slide-->
+                                <div class="swiper-slide media-video">
+                                    <a href='<?php echo asset('template/img_phim/img_trailer/{{imgtrailerfirst.Anh8}}') ; ?>' class="movie__media-item">
+                                        <img alt='' src="<?php echo asset('template/img_phim/img_trailer/{{imgtrailerfirst.Anh8}}') ; ?>">
+                                    </a>
+                                </div>
+
+                                <!--Slide-->
+                                <div class="swiper-slide media-photo">
+                                    <a href='<?php echo asset('template/img_phim/img_trailer/{{imgtrailerfirst.Anh9}}') ; ?>' class="movie__media-item">
+                                        <img alt='' src="<?php echo asset('template/img_phim/img_trailer/{{imgtrailerfirst.Anh9}}') ; ?>">
+                                    </a>
+                                </div>
+
+                                <!--Slide-->
+                                <div class="swiper-slide media-photo">
+                                    <a href='<?php echo asset('template/img_phim/img_trailer/{{imgtrailerfirst.Anh10}}') ; ?>' class="movie__media-item">
+                                        <img alt='' src="<?php echo asset('template/img_phim/img_trailer/{{imgtrailerfirst.Anh10}}') ; ?>">
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <h2 class="page-heading">showtime &amp; tickets</h2>
+                <div class="choose-container">
+                    <form id='select' class="select" method='get'>
+                        <select name="select_item" id="select-sort" class="select__sort" tabindex="0">
+                            <option value="1" selected='selected'>London</option>
+                            <option value="2">New York</option>
+                            <option value="3">Paris</option>
+                            <option value="4">Berlin</option>
+                            <option value="5">Moscow</option>
+                            <option value="3">Minsk</option>
+                            <option value="4">Warsawa</option>
+                            <option value="5">Kiev</option>
+                        </select>
+                    </form>
+
+                    <div class="datepicker">
+                      <span class="datepicker__marker"><i class="fa fa-calendar"></i>Date</span>
+                      <input type="text" id="datepicker" value='01/03/2021' class="datepicker__input">
+                    </div>
+                    
+                    <div class="btn">
+                      <input type='submit' value="load" ng-click="load()"/>
+                    </div>
+                    <a href="#" id="map-switch" class="watchlist watchlist--map watchlist--map-full" ng-click="loadgiochieu()"><span class="show-map">Show cinemas on map</span><span  class="show-time">Show cinema time table</span></a>
+                    
+                    <div class="clearfix"></div>
+
+                    <div class="time-select">
+                    <div class="time-select__group group--first" >
+                            <div class="col-sm-3">
+                                <p class="time-select__place">Rạp 1</p>
+                            </div>
+                            <ul class="col-sm-6 items-wrap" ng-click="chonrap1()">
+                                <li class="time-select__item" data-time='{{time1_1}}'>{{time1_1}}</li>
+                                <li class="time-select__item" data-time='{{time1_2}}'>{{time1_2}}</li>
+                                <li class="time-select__item" data-time='{{time1_3}}'>{{time1_3}}</li>
+                                <li class="time-select__item" data-time='{{time1_4}}'>{{time1_4}}</li>
+                                <li class="time-select__item" data-time='{{time1_5}}'>{{time1_5}}</li>
+                                <li class="time-select__item" data-time='{{time1_6}}'>{{time1_6}}</li>
+                            </ul>
+                        </div>
+
+                        <div class="time-select__group">
+                            <div class="col-sm-3">
+                                <p class="time-select__place">Rạp 2</p>
+                            </div>
+                            <ul class="col-sm-6 items-wrap" ng-click="chonrap2()">
+                                <li class="time-select__item" data-time='{{time2_1}}'>{{time2_1}}</li>
+                                <li class="time-select__item" data-time='{{time2_2}}'>{{time2_2}}</li>
+                                <li class="time-select__item" data-time='{{time2_3}}'>{{time2_3}}</li>
+                                <li class="time-select__item" data-time='{{time2_4}}'>{{time2_4}}</li>
+                                <li class="time-select__item" data-time='{{time2_5}}'>{{time2_5}}</li>
+                                <li class="time-select__item" data-time='{{time2_6}}'>{{time2_6}}</li>
+                            </ul>
+                        </div>
+
+                    
+                    </div>
+
+                    <!-- hiden maps with multiple locator-->
+                    <div class="map">
+                        <div id='cimenas-map'></div>
+                    </div>
+
+                    <h2 class="page-heading">comments ({{count_Comment}})</h2>
+
+                    <div class="comment-wrapper">
+                        <form id="comment-form" class="comment-form" method='post'>
+                            <textarea class="comment-form__text" placeholder='Add you comment here' ng-model="noidung"></textarea>
+                            <label class="comment-form__info">250 characters left</label>
+                            <button type='submit' class="btn btn-md btn--danger comment-form__btn" ng-click="addComment()">add comment</button>
+                        </form>
+
+                        <div class="comment-sets">
+
+                            <div class="comment" ng-repeat="item in listcmt">
+                                <div class="comment__images">
+                                    <img alt='' style="height:50px; width: 50px; border-radius:50%" src="<?php echo asset('template/img_user/img_khachhang/{{item.Anh}}') ; ?>">
+                                </div>
+
+                                
+
+                                <a href='#' class="comment__author"><span class="social-used fa fa-facebook"></span>{{item.TenKH}}</a>
+                                <p class="comment__date">{{item.ThoiGianCMT}}</p>
+                                <p class="comment__message" style="font-size: 20px; padding: 10px;">{{item.NoiDung}}</p>
+                                <a href='#' class="comment__reply">Reply</a>
+                            </div>
+
+
+                           
+
+
+                            <div class="comment-more">
+                                <a href="#" class="watchlist">Show more comments</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <div class="clearfix"></div>
+
+        <footer class="footer-wrapper">
+            <section class="container">
+                <div class="col-xs-4 col-md-2 footer-nav">
+                    <ul class="nav-link">
+                        <li><a href="#" class="nav-link__item">Cities</a></li>
+                        <li><a href="movie-list-left.html" class="nav-link__item">Movies</a></li>
+                        <li><a href="trailer.html" class="nav-link__item">Trailers</a></li>
+                        <li><a href="rates-left.html" class="nav-link__item">Rates</a></li>
+                    </ul>
+                </div>
+                <div class="col-xs-4 col-md-2 footer-nav">
+                    <ul class="nav-link">
+                        <li><a href="coming-soon.html" class="nav-link__item">Coming soon</a></li>
+                        <li><a href="cinema-list.html" class="nav-link__item">Cinemas</a></li>
+                        <li><a href="offers.html" class="nav-link__item">Best offers</a></li>
+                        <li><a href="news-left.html" class="nav-link__item">News</a></li>
+                    </ul>
+                </div>
+                <div class="col-xs-4 col-md-2 footer-nav">
+                    <ul class="nav-link">
+                        <li><a href="#" class="nav-link__item">Terms of use</a></li>
+                        <li><a href="gallery-four.html" class="nav-link__item">Gallery</a></li>
+                        <li><a href="contact.html" class="nav-link__item">Contacts</a></li>
+                        <li><a href="page-elements.html" class="nav-link__item">Shortcodes</a></li>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-md-6">
+                    <div class="footer-info">
+                        <p class="heading-special--small">A.Movie<br><span class="title-edition">in the social media</span></p>
+
+                        <div class="social">
+                            <a href='#' class="social__variant fa fa-facebook"></a>
+                            <a href='#' class="social__variant fa fa-twitter"></a>
+                            <a href='#' class="social__variant fa fa-vk"></a>
+                            <a href='#' class="social__variant fa fa-instagram"></a>
+                            <a href='#' class="social__variant fa fa-tumblr"></a>
+                            <a href='#' class="social__variant fa fa-pinterest"></a>
+                        </div>
+
+                        <div class="clearfix"></div>
+                        <p class="copy">&copy; A.Movie, 2013. All rights reserved. Done by Olia Gozha</p>
+                    </div>
+                </div>
+            </section>
+        </footer>
+    </div>
+
+    <!-- open/close -->
+    <div class="overlay overlay-hugeinc">
+
+        <section class="container">
+
+            <div class="col-sm-4 col-sm-offset-4">
+                <button type="button" class="overlay-close">Close</button>
+                <form id="login-form" class="login" method='get' novalidate=''>
+                    <p class="login__title">sign in <br><span class="login-edition">welcome to A.Movie</span></p>
+
+                    <div class="social social--colored">
+                        <a href='#' class="social__variant fa fa-facebook"></a>
+                        <a href='#' class="social__variant fa fa-twitter"></a>
+                        <a href='#' class="social__variant fa fa-tumblr"></a>
+                    </div>
+
+                    <p class="login__tracker">or</p>
+
+                    <div class="field-wrap">
+                        <input type='email' placeholder='Email' name='user-email' class="login__input">
+                        <input type='password' placeholder='Password' name='user-password' class="login__input">
+
+                        <input type='checkbox' id='#informed' class='login__check styled'>
+                        <label for='#informed' class='login__check-info'>remember me</label>
+                    </div>
+
+                    <div class="login__control">
+                        <button type='submit' class="btn btn-md btn--warning btn--wider">sign in</button>
+                        <a href="#" class="login__tracker form__tracker">Forgot password?</a>
+                    </div>
+                </form>
+            </div>
+
+        </section>
+    </div>
+
+    <!-- JavaScript-->
+    <!-- jQuery 3.1.1-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>
+        window.jQuery || document.write('<script src="<?php echo asset('template/js/external/jquery-3.1.1.min.js') ; ?>"><\/script>')
+    </script>
+    <!-- Migrate -->
+    <script src="<?php echo asset('template/js/external/jquery-migrate-1.2.1.min.js') ; ?>"></script>
+    <!-- jQuery UI -->
+    <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <!-- Bootstrap 3-->
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+
+    <!-- Mobile menu -->
+    <script src="<?php echo asset('template/js/jquery.mobile.menu.js') ; ?>"></script>
+    <!-- Select -->
+    <script src="<?php echo asset('template/js/external/jquery.selectbox-0.2.min.js') ; ?>"></script>
+
+    <!-- Stars rate -->
+    <script src="<?php echo asset('template/js/external/jquery.raty.js') ; ?>"></script>
+    <!-- Swiper slider -->
+    <script src="<?php echo asset('template/js/external/idangerous.swiper.min.js') ; ?>"></script>
+    <!-- Magnific-popup -->
+    <script src="<?php echo asset('template/js/external/jquery.magnific-popup.min.js') ; ?>"></script>
+
+    <!--*** Google map  ***-->  
+    <!--*** Google map infobox  ***-->
+
+    <!-- Share buttons -->
+    <script type="text/javascript">
+        var addthis_config = {
+            "data_track_addressbar": true
+        };
+    </script>
+    
+    <!-- Form element -->
+    <script src="<?php echo asset('template/js/external/form-element.js') ; ?>"></script>
+    <!-- Form validation -->
+    <script src="<?php echo asset('template/js/form.js') ; ?>"></script>
+
+    <!-- Custom -->
+    <script src="<?php echo asset('template/js/custom.js') ; ?>"></script>
+
+    <script type="text/javascript" src="<?php echo asset('app/xemchitiet.js') ; ?>"></script>
+    
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            init_MoviePage();
+            init_MoviePageFull();
+        });
+    </script>
+
+
+
+
+
 </body>
 
 </html>

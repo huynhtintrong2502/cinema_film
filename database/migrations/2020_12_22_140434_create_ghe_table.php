@@ -14,11 +14,9 @@ class CreateGheTable extends Migration
     public function up()
     {
         Schema::create('ghe', function (Blueprint $table) {
-            $table->integer('MaGhe')->primary();
+            $table->increments('MaGhe',true);//integer('MaGhe')->primary();
             $table->integer('MaLoaiGhe');
-            $table->foreign('MaLoaiGhe')->references('MaLoaiGhe')->on('loaighe');
             $table->integer('MaRap');
-            $table->foreign('MaRap')->references('MaRap')->on('rap');
             $table->integer('Xoa')->default(0);
             $table->timestamps();
         });

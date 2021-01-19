@@ -15,9 +15,8 @@ class CreateNguoidungTable extends Migration
     {
         Schema::create('nguoidung', function (Blueprint $table) {
             
-            $table->integer('ID')->primary();
+            $table->increments('ID',true);//integer('ID')->primary();
             $table->integer('MaUT');
-            $table->foreign('MaUT')->references('MaUT')->on('usertype');
             $table->string('UserName');
             $table->string('PassWord');
             $table->integer('Xoa')->default(0);

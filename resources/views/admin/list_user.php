@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="list_film-app">
 
 <head>
 
@@ -16,7 +16,7 @@
 
 </head>
 
-<body>
+<body ng-controller="list_filmController">
 
     <div id="wrapper">
 
@@ -369,7 +369,7 @@
 
 
                 <li>
-                    <a href="login.html">
+                    <a href="#" ng-click="logout()">
                         <i class="fa fa-sign-out"></i> Log out
                     </a>
                 </li>

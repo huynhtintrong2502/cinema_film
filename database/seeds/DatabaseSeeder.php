@@ -23,11 +23,12 @@ class DatabaseSeeder extends Seeder
             NhaCungCapSeeder::class,
             NhanVienSeeder::class,
             PhimSeeder::class,
-            PhimTheLoaiSeeder::class,
             RapSeeder::class,
             SuatChieuSeeder::class,
             TheLoaiSeeder::class,
-            VeSeeder::class
+            VeSeeder::class,
+            ImgTrailerSeeder::class,
+            LichChieuPhimSeeder::class
         );
     }
 }

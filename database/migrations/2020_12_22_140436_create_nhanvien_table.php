@@ -14,9 +14,8 @@ class CreateNhanvienTable extends Migration
     public function up()
     {
         Schema::create('nhanvien', function (Blueprint $table) {
-            $table->string('MaNV')->primary();
+            $table->increments('MaNV',true);//string('MaNV')->primary();
             $table->integer('ID');
-            $table->foreign('ID')->references('ID')->on('nguoidung');
             $table->string('TenNV');
             $table->string('CMND');
             $table->string('DiaChi');

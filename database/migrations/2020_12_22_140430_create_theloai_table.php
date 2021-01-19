@@ -14,7 +14,7 @@ class CreateTheloaiTable extends Migration
     public function up()
     {
         Schema::create('theloai', function (Blueprint $table) {
-            $table->integer('MaTL')->primary();
+            $table->increments('MaTL',true);//integer('MaTL')->primary();
             $table->string('TenTheLoai');
             $table->integer('Xoa')->default(0);
             $table->timestamps();

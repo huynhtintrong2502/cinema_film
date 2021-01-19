@@ -14,11 +14,9 @@ class CreateKhachhangTable extends Migration
     public function up()
     {
         Schema::create('khachhang', function (Blueprint $table) {
-            $table->integer('MaKH')->primary();
+            $table->increments('MaKH',true);//integer('MaKH')->primary();
             $table->integer('MaLoaiKH');
-            $table->foreign('MaLoaiKH')->references('MaLoaiKH')->on('loaikhachhang');
             $table->integer('ID');
-            $table->foreign('ID')->references('ID')->on('nguoidung');
             $table->string('TenKH');
             $table->string('CMND');
             $table->date('NgaySinh');

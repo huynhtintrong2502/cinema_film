@@ -11,7 +11,6 @@ class GheSeeder extends Seeder
      */
     public function run()
     {
-        
         DB::table('ghe')->insert(
             [
                 [

@@ -14,18 +14,16 @@ class CreatePhimTable extends Migration
     public function up()
     {
         Schema::create('phim', function (Blueprint $table) {
-            $table->integer('MaPhim')->primary();
+            $table->increments('MaPhim',true);//integer('MaPhim')->primary();
             $table->integer('MaNCC');
-            $table->foreign('MaNCC')->references('MaNCC')->on('nhacungcap');
             $table->string('TenPhim');
             $table->string('DaoDien');
             $table->string('QuocGia');
             $table->integer('NamSX');
             $table->integer('ThoiLuong');
             $table->string('NgonNgu');
-            $table->string('NoiDung');
+            $table->string('NoiDung',5000);
             $table->integer('MaTL');
-            $table->foreign('MaTL')->references('MaTL')->on('theloai');
             $table->decimal('DanhGia');
             $table->integer('AgeDuocXem');
             $table->date('NgayMua');

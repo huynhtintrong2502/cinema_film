@@ -14,7 +14,7 @@ class CreateNhacungcapTable extends Migration
     public function up()
     {
         Schema::create('nhacungcap', function (Blueprint $table) {
-            $table->integer('MaNCC')->primary();
+            $table->increments('MaNCC',true);//integer('MaNCC')->primary();
             $table->string('TenNCC');
             $table->string('DiaChi');
             $table->integer('Xoa')->default(0);

@@ -23,3 +23,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('/sign_in',function(){
     return view('sign_in');
 });
+
+Route::post('update_maphim',['uses'=>'ApiController@update_api_maphim']);
