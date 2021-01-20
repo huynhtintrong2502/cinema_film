@@ -28,7 +28,6 @@ class LichChieuPhimController extends Controller
         Carbon::parse(Carbon::now())->format('d/m/Y');
         return phim::join('lichchieuphim', 'lichchieuphim.MaPhim', '=', 'phim.MaPhim')->where([
             ['phim.Xoa','=',0],
-            ['lichchieuphim.Xoa','=',0],
             ['lichchieuphim.NgayChieu','>=',$date]
         ])
         ->select('lichchieuphim.*','phim.*')->orderBy('phim.TenPhim','DESC')->get();

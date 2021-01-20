@@ -62,6 +62,14 @@ app.controller('BookfinalController', function($scope, $http, API, $rootScope, $
             });
         }
     };
+    $http.get(API + 'apive').then(function(response) {
+        $http.get(API + 've_first/' + response.data.MaPhim + '/' + response.data.NgayXem + '/' + response.data.MaSC + '/' + response.data.MaRap + '/' + response.data.MaGhe).then(function(response) {
+            $scope.ve = response.data.MaVe;
+            $http.get(API + 'get_vefirst/' + response.data.MaVe).then(function(response) {
+                $scope.ve = response.data;
+            });
+        });
+    });
 
 
     $scope.printDiv = function(div) {

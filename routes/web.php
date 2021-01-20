@@ -193,6 +193,11 @@ Route::get('listve_khachhang/{id}',['uses'=>'VeController@listve_khachhang']);
 
 Route::get('listve_nhanvien/{id}',['uses'=>'VeController@listve_nhanvien']);
 
+Route::get('get_vefirst/{id}',['uses'=>'VeController@get_vefirst']);
+
+Route::get('ve_first/{mp}/{NgayXem}/{SuatChieu}/{marap}/{maghe}',['uses'=>'VeController@ve_first']);
+
+
 
 
 

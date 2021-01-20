@@ -237,16 +237,15 @@
 
                             <div class="ticket-secondary">
                                 <span class="ticket__item">Ticket number <strong class="ticket__number">a126bym4</strong></span>
-                                <span class="ticket__item ticket__date">25/10/2013</span>
-                                <span class="ticket__item ticket__time">17:45</span>
-                                <span class="ticket__item">Cinema: <span class="ticket__cinema">Cineworld</span></span>
-                                <span class="ticket__item">Hall: <span class="ticket__hall">Visconti</span></span>
-                                <span class="ticket__item ticket__price">price: <strong class="ticket__cost">$60</strong></span>
+                                <span class="ticket__item ticket__date">Ngày xem: {{ve.NgayXem}}</span>
+                                <span class="ticket__item ticket__time">{{ve.TGBatDau}}</span>
+                                <span class="ticket__item">Cinema: <span class="ticket__cinema">{{ve.TenRap}}</span></span>
+                                <span class="ticket__item ticket__price">price: <strong class="ticket__cost">${{ve.GiaVe}}</strong></span>
                             </div>
 
                             <div class="ticket-primery">
-                                <span class="ticket__item ticket__item--primery ticket__film">Film<br><strong class="ticket__movie">The Fifth Estate (2013)</strong></span>
-                                <span class="ticket__item ticket__item--primery">Sits: <span class="ticket__place">11F, 12F, 13F</span></span>
+                                <span class="ticket__item ticket__item--primery ticket__film">Film<br><strong class="ticket__movie">{{ve.TenPhim}} ({{ve.NamSX}})</strong></span>
+                                <span class="ticket__item ticket__item--primery">Sits: <span class="ticket__place">{{ve.TenGhe}}</span></span>
                             </div>
 
 

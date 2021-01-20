@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\phim;
 use App\ve;
+use App\ghe;
+use App\rap;
 use App\phimtheloai;
 use App\lichchieuphim;
 use Carbon\Carbon;
@@ -21,6 +23,20 @@ class VeController extends Controller
             ['MaSC','=',$SuatChieu],
             ['Xoa','=',0]
         ])->get();
+    }
+
+
+    public function ve_first($mp,$NgayXem,$SuatChieu,$marap,$maghe)
+    {
+        $date = Carbon::parse($NgayXem)->format('Y/m/d');
+        return ve::where([
+            ['MaPhim','=',$mp],
+            ['NgayXem','=',$date],
+            ['MaSC','=',$SuatChieu],
+            ['MaGhe','=',$maghe],
+            ['MaRap','=',$marap],
+            ['Xoa','=',0]
+        ])->get()->first();
     }
 
     public function create_ve($MaSC,$MaGhe,$MaKH,$MaPhim,$NgayXem,$NgayMua,$GiaVe)
@@ -54,5 +70,17 @@ class VeController extends Controller
         return ve::join('phim', 've.MaPhim', '=', 'phim.MaPhim')->where([
             ['ve.MaKH','=',$id]
         ])->select('ve.*','phim.*')->get();
+    }
+
+    public function get_vefirst($id)
+    {
+        return ve::join('phim', 've.MaPhim', '=', 'phim.MaPhim')
+        ->join('ghe', 've.MaGhe', '=', 'ghe.MaGhe')
+        ->join('rap', 've.MaRap', '=', 'rap.MaRap')
+        ->join('suatchieu', 've.MaSC', '=', 'suatchieu.MaSC')
+        ->where([
+            ['ve.MaVe','=',$id],
+            ['ve.Xoa','=',0]
+        ])->select('ve.*','phim.*','ghe.*','rap.*','suatchieu.*')->get()->first();
     }
 }

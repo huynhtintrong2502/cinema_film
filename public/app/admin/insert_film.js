@@ -44,7 +44,7 @@ app.controller('insertfilmController', function($scope, $http, API, $rootScope, 
                     });
 
                     $scope.savechange = function() {
-                        $http.get(API + 'update_phim/' + $scope.tenphim + '/' + $scope.daodien + '/' + $scope.quocgia + '/' + $scope.namsanxuat + '/' + $scope.thoiluong + '/' + $scope.ngonngu + '/' + $scope.noidung + '/' + $scope.selected_theloai + '/' + $scope.selected_nhacungcap + '/' + $scope.tuoigioihan).then(function(response) {
+                        $http.get(API + 'update_phim/' + $scope.api_maphim + '/' + $scope.tenphim + '/' + $scope.daodien + '/' + $scope.quocgia + '/' + $scope.namsanxuat + '/' + $scope.thoiluong + '/' + $scope.ngonngu + '/' + $scope.noidung + '/' + $scope.selected_theloai + '/' + $scope.selected_nhacungcap + '/' + $scope.tuoigioihan).then(function(response) {
                             console.log(response.data);
                             alert("Đã thay đổi phim " + response.data + ' thành công');
                         });

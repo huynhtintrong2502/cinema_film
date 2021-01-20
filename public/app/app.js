@@ -76,7 +76,7 @@ app.controller('IndexController', function($scope, $http, API, $rootScope, $wind
 
     });
 
-    $http.get(API + 'lichchieu').then(function(response) {
+    $http.get(API + 'getlichchieu').then(function(response) {
         $scope.lichchieu = response.data;
         console.log(response.data);
 
