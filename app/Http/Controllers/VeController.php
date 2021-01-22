@@ -39,12 +39,13 @@ class VeController extends Controller
         ])->get()->first();
     }
 
-    public function create_ve($MaSC,$MaGhe,$MaKH,$MaPhim,$NgayXem,$NgayMua,$GiaVe)
+    public function create_ve($MaRap,$MaSC,$MaGhe,$MaKH,$MaPhim,$NgayXem,$NgayMua,$GiaVe)
     {
         $date1 = Carbon::parse($NgayXem)->format('Y/m/d');
         $date2 = Carbon::parse($NgayMua)->format('Y/m/d');
         $ve = new ve;
         $ve->MaNV = 2;
+        $ve->MaRap = $MaRap;
         $ve->MaSC = $MaSC;
         $ve->MaGhe = $MaGhe;
         $ve->MaKH = $MaKH;
@@ -74,13 +75,15 @@ class VeController extends Controller
 
     public function get_vefirst($id)
     {
-        return ve::join('phim', 've.MaPhim', '=', 'phim.MaPhim')
-        ->join('ghe', 've.MaGhe', '=', 'ghe.MaGhe')
-        ->join('rap', 've.MaRap', '=', 'rap.MaRap')
-        ->join('suatchieu', 've.MaSC', '=', 'suatchieu.MaSC')
-        ->where([
-            ['ve.MaVe','=',$id],
-            ['ve.Xoa','=',0]
-        ])->select('ve.*','phim.*','ghe.*','rap.*','suatchieu.*')->get()->first();
+        // return ve::join('phim', 've.MaPhim', '=', 'phim.MaPhim')
+        // ->join('ghe', 've.MaGhe', '=', 'ghe.MaGhe')
+        // ->join('rap', 've.MaRap', '=', 'rap.MaRap')
+        // ->join('suatchieu', 've.MaSC', '=', 'suatchieu.MaSC')
+        // ->where([
+        //     ['ve.MaVe','=',$id],
+        //     ['ve.Xoa','=',0]
+        // ])->select('ve.*','phim.*','ghe.*','rap.*','suatchieu.*')->get()->first();
+        return ve::where('MaVe','=',$id)->first();
+
     }
 }

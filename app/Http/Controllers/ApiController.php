@@ -99,16 +99,17 @@ class ApiController extends Controller
     public function luu_api_ve_masc_rap($masc,$marap)
     {
         $mp = api_ve::where('Id','=',1); //api_maphim::find(1);  ->select('Id', 'MaPhim','updated_at')
-            
-        $mp->update([
-             'MaSC'=> $masc,
-             'MaRap' => $marap
-        ]);
+        
+            $mp->update([
+                'MaSC'=> $masc,
+                'MaRap' => $marap
+            ]);
+        
         return 1;
     }
     public function luu_api_ve_maphim($maphim)
     {
-        $mp = api_ve::where('Id','=',1); //api_maphim::find(1);  ->select('Id', 'MaPhim','updated_at')
+        $mp = api_ve::where('Id','=',1)->get()->first(); //api_maphim::find(1);  ->select('Id', 'MaPhim','updated_at')
             
         $mp->update([
              'MaPhim'=> $maphim

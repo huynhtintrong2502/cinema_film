@@ -136,11 +136,19 @@ Route::get('lichchieu',['uses'=>'TrangChuController@Phim_Sap_Chieu']);
 
 Route::get('getfilmfirst',['uses'=>'PhimController@getfilm_first']);
 
+Route::get('getfilmfirstid/{id}',['uses'=>'PhimController@getfilm_first_id']);
+
+Route::get('getfilm_first_id_1/{id}',['uses'=>'LichChieuPhimController@getfilm_first_id']);
+
+
+
 Route::get('getimgtrailerfirst',['uses'=>'ImgTrailerController@get_imgtrailer_first']);
 
 Route::get('count_comment/{id}',['uses'=>'CommentController@count_comment']);
 
 Route::get('getsuatchieu/{MaPhim}/{MaRap}',['uses'=>'LichChieuPhimController@get_suatchieu']);
+
+Route::get('getsuatchieu_id/{id}',['uses'=>'SuatChieuController@getsuatchieu_id']);
 
 Route::get('create_lichchieu/{MaPhim}/{NgayChieu}/{MaRap}/{MaSC}',['uses'=>'LichChieuPhimController@create_lichchieu']);
 
@@ -207,9 +215,11 @@ Route::get('getmachieu/{gioichieu}',['uses'=>'SuatChieuController@get_masc']);
 //api trang book ve 3
 Route::get('getghe/{maghe}',['uses'=>'GheController@get_ghe']);
 
-Route::get('create_ve/{MaSC}/{MaGhe}/{MaKH}/{MaPhim}/{NgayXem}/{NgayMua}/{GiaVe}',['uses'=>'VeController@create_ve']);
+Route::get('create_ve/{MaRap}/{MaSC}/{MaGhe}/{MaKH}/{MaPhim}/{NgayXem}/{NgayMua}/{GiaVe}',['uses'=>'VeController@create_ve']);
 //api khách hàng
 Route::get('getlichchieu',['uses'=>'LichChieuPhimController@listchieuphim']);
+
+Route::get('getlichchieu_1',['uses'=>'LichChieuPhimController@listchieuphim_1']);
 
 //api tìm kiếm
 Route::get('listtimkiem/{search_text}/{by_search}',['uses'=>'PhimController@search_film']);

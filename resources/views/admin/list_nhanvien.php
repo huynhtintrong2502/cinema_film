@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>INSPINIA | Nhân viên</title>
+    <title>Admin Cinema | Nhân viên</title>
 
     <script type="text/javascript" src="<?php echo asset('app/lib/angular.min.js') ; ?>"></script>
     <script type="text/javascript" src="<?php echo asset('app/admin/list_nhanvien.js') ; ?>"></script>

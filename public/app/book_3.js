@@ -94,9 +94,7 @@ app.controller('Book3Controller', function($scope, $http, API, $rootScope, $loca
         if ($scope.email == "" || $scope.phone == "")
             alert("Mời bạn nhập đầy đủ thông tin email hoặc số điện thoại");
         else {
-            $http.get(API + 'user').then(function(response) {
-                $scope.user = response.data;
-            });
+
             $http.get(API + 'apive').then(function(response) {
                 var today = new Date();
                 var date = today.getDate();
@@ -109,7 +107,7 @@ app.controller('Book3Controller', function($scope, $http, API, $rootScope, $loca
                 var month1 = today1.getMonth() + 1;
                 var year1 = today1.getFullYear();
                 $NgayXem = year1 + "-" + month1 + "-" + date1;
-                $http.get(API + 'create_ve/' + response.data.MaSC + '/' + response.data.MaGhe + '/' + $scope.user.Id_nguoidung + '/' + response.data.MaPhim + '/' + $NgayXem + '/' + $NgayMua + '/' + $sum).then(function(response) {
+                $http.get(API + 'create_ve/' + response.data.MaRap + '/' + response.data.MaSC + '/' + response.data.MaGhe + '/' + $scope.user.Id_nguoidung + '/' + response.data.MaPhim + '/' + $NgayXem + '/' + $NgayMua + '/' + $sum).then(function(response) {
                     console.log(response.data);
                     $window.location.href = 'book_final';
                 });

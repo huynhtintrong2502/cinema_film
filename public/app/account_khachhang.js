@@ -27,11 +27,11 @@ app.controller('account_khachhangController', function($scope, $http, API, $root
                 else {
                     $http.get(API + 'getkhachhangfirst/' + khachhang.Id_nguoidung).then(function(response) {
                         $scope.khachfrst = response.data;
-                        $scope.hoten = response.data.HoTen;
+                        $scope.hoten = response.data.TenKH;
                         $scope.gioitinh = response.data.GioiTinh;
                         $scope.ngaysinh = '25/02/2000';
                         $scope.email = response.data.Email;
-                        $scope.sdt = response.data.SDT;
+                        $scope.sodienthoai = response.data.SDT;
                         $scope.cmnd = response.data.CMND;
                         $scope.diachi = response.data.DiaChi;
                     });
@@ -94,6 +94,11 @@ app.controller('account_khachhangController', function($scope, $http, API, $root
                             alert('Bạn chưa nhập địa chỉ!');
                         else {
                             var mydate = new Date($scope.ngaysinh);
+                            if (mydate == null) {
+                                alert('Bạn chưa chọn ngày sinh');
+                                return;
+                            }
+
                             var date1 = mydate.getDate();
                             var month1 = mydate.getMonth() + 1;
                             var year1 = mydate.getFullYear();

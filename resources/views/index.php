@@ -55,9 +55,7 @@
 <body ng-controller="IndexController">
     <div class="wrapper">
         <!-- Banner -->
-        <div class="banner-top">
-            <img alt='top banner' src="<?php echo asset('template/images/banners/bra.jpg') ; ?>">
-        </div>
+        
 
         <!-- Header section -->
         <header class="header-wrapper header-wrapper--home">
@@ -539,8 +537,8 @@
       <div class="col-sm-10 col-sm-offset-1 movie-best__rating">Today Best choice</div>
       <div class="col-sm-12 change--col">
           <div class="movie-beta__item " ng-repeat="item in ListPhimHot">
-             <img alt='' src="<?php echo asset('template/img_phim/panel_phim/{{item.AnhHienThi}}') ; ?>">
-              <span class="best-rate">{{item.DanhGia}}</span>
+             <img alt=''  height="285" src="<?php echo asset('template/img_phim/panel_phim/{{item.AnhHienThi}}') ; ?>">
+              <span class="best-rate">{{item.DanhGia|number:1}}</span>
 
               <ul class="movie-beta__info">
                   <li><span class="best-voted">71 people voted today</span></li>
@@ -623,7 +621,7 @@
                  <div class="movie movie--test movie--test--dark movie--test--left">
                      <div class="movie__images">
                          <a ng-click="xemchitiet(lichchieu[0].MaPhim)" href="#" class="movie-beta__link">
-                             <img  alt='' src="<?php echo asset('template/img_phim/panel_phim/{{lichchieu[0].AnhHienThi}}') ; ?>">
+                             <img   alt='' src="<?php echo asset('template/img_phim/panel_phim/{{lichchieu[0].AnhHienThi}}') ; ?>">
                          </a>
                      </div>
 
@@ -636,7 +634,7 @@
                          
                          <div class="movie__rate">
                          
-                             <span class="movie__rating">{{lichchieu[0].DanhGia}}</span>
+                             <span class="movie__rating">{{lichchieu[0].DanhGia|number:1}}</span>
                          </div>               
                      </div>
                  </div>
@@ -645,8 +643,8 @@
               <!-- Movie variant with time -->
                  <div class="movie movie--test movie--test--light movie--test--left">
                      <div class="movie__images">
-                         <a ng-click="xemchitiet(lichchieu[1].MaPhim)" href="xemchitiet" class="movie-beta__link">
-                         <img alt='' src="<?php echo asset('template/img_phim/panel_phim/{{lichchieu[0].AnhHienThi}}') ; ?>">
+                         <a ng-click="xemchitiet(lichchieu[1].MaPhim)"  href="xemchitiet" class="movie-beta__link" >
+                         <img alt='' src="<?php echo asset('template/img_phim/panel_phim/{{lichchieu[1].AnhHienThi}}') ; ?>">
                          </a>
                      </div>
 
@@ -658,7 +656,7 @@
                          <p class="movie__option"><a href="#">{{lichchieu[1].TenTheLoai}}</a></p>
                          
                          <div class="movie__rate">
-                             <span class="movie__rating">{{lichchieu[1].DanhGia}}</span>
+                             <span class="movie__rating">{{lichchieu[1].DanhGia|number:1}}</span>
                          </div>               
                      </div>
                  </div>
@@ -668,7 +666,7 @@
                  <div class="movie movie--test movie--test--light movie--test--right" >
                      <div class="movie__images">
                          <a ng-click="xemchitiet(lichchieu[2].MaPhim)" href="xemchitiet" class="movie-beta__link">
-                         <img alt='' src="<?php echo asset('template/img_phim/panel_phim/{{lichchieu[2].AnhHienThi}}') ; ?>">
+                         <img height="100px" alt=''  src="<?php echo asset('template/img_phim/panel_phim/{{lichchieu[2].AnhHienThi}}') ; ?>">
                          </a>
                      </div>
 
@@ -680,7 +678,7 @@
                          <p class="movie__option"><a href="#">{{lichchieu[2].TenTheLoai}}</a></p>
                          
                          <div class="movie__rate">
-                             <span class="movie__rating">{{lichchieu[2].DanhGia}}</span>
+                             <span class="movie__rating">{{lichchieu[2].DanhGia|number:1}}</span>
                          </div>               
                      </div>
                  </div>
@@ -690,7 +688,7 @@
                  <div class="movie movie--test movie--test--dark movie--test--right">
                      <div class="movie__images">
                          <a ng-click="xemchitiet(lichchieu[3].MaPhim)" href="xemchitiet" class="movie-beta__link">
-                         <img alt='' src="<?php echo asset('template/img_phim/panel_phim/{{lichchieu[3].AnhHienThi}}') ; ?>">
+                         <img alt=''  src="<?php echo asset('template/img_phim/panel_phim/{{lichchieu[3].AnhHienThi}}') ; ?>">
                          </a>
                      </div>
 
@@ -702,7 +700,7 @@
                          <p class="movie__option"><a href="#">{{lichchieu[3].TenTheLoai}}</a></p>
                          
                          <div class="movie__rate">
-                             <span class="movie__rating">{{lichchieu[3].DanhGia}}</span>
+                             <span class="movie__rating">{{lichchieu[3].DanhGia|number:1}}</span>
                          </div>               
                      </div>
                  </div>
@@ -712,7 +710,7 @@
                  <div class="movie movie--test movie--test--dark movie--test--left">
                      <div class="movie__images">
                          <a ng-click="xemchitiet(lichchieu[4].MaPhim)" href="xemchitiet" class="movie-beta__link">
-                         <img alt='' src="<?php echo asset('template/img_phim/panel_phim/{{lichchieu[4].AnhHienThi}}') ; ?>">
+                         <img alt=''  src="<?php echo asset('template/img_phim/panel_phim/{{lichchieu[4].AnhHienThi}}') ; ?>">
                          </a>
                      </div>
 
@@ -724,7 +722,7 @@
                          <p class="movie__option"><a href="#">{{lichchieu[4].TenTheLoai}}</a></p>
                          
                          <div class="movie__rate">
-                             <span class="movie__rating">{{lichchieu[4].DanhGia}}</span>
+                             <span class="movie__rating">{{lichchieu[4].DanhGia|number:1}}</span>
                          </div>               
                      </div>
                  </div>
@@ -734,7 +732,7 @@
                  <div class="movie movie--test movie--test--light movie--test--left">
                      <div class="movie__images">
                          <a ng-click="xemchitiet(lichchieu[5].MaPhim)" href="xemchitiet" class="movie-beta__link">
-                         <img alt='' src="<?php echo asset('template/img_phim/panel_phim/{{lichchieu[5].AnhHienThi}}') ; ?>">
+                         <img alt=''  src="<?php echo asset('template/img_phim/panel_phim/{{lichchieu[5].AnhHienThi}}') ; ?>">
                          </a>
                      </div>
 
@@ -746,7 +744,7 @@
                          <p class="movie__option"><a href="#">{{lichchieu[5].TenTheLoai}}</a></p>
                          
                          <div class="movie__rate">
-                             <span class="movie__rating">{{lichchieu[5].DanhGia}}</span>
+                             <span class="movie__rating">{{lichchieu[5].DanhGia|number:1}}</span>
                          </div>               
                      </div>
                  </div>
@@ -756,7 +754,7 @@
                  <div class="movie movie--test movie--test--light movie--test--right">
                      <div class="movie__images">
                          <a ng-click="xemchitiet(lichchieu[6].MaPhim)" href="xemchitiet" class="movie-beta__link">
-                         <img alt='' src="<?php echo asset('template/img_phim/panel_phim/{{lichchieu[6].AnhHienThi}}') ; ?>">
+                         <img alt=''  src="<?php echo asset('template/img_phim/panel_phim/{{lichchieu[6].AnhHienThi}}') ; ?>">
                          </a>
                      </div>
 
@@ -768,7 +766,7 @@
                          <p class="movie__option"><a href="#">{{lichchieu[6].TenTheLoai}}</a></p>
                          
                          <div class="movie__rate">
-                             <span class="movie__rating">{{lichchieu[6].DanhGia}}</span>
+                             <span class="movie__rating">{{lichchieu[6].DanhGia|number:1}}</span>
                          </div>               
                      </div>
                  </div>
@@ -778,7 +776,7 @@
                  <div class="movie movie--test movie--test--dark movie--test--right">
                      <div class="movie__images">
                          <a ng-click="xemchitiet(lichchieu[7].MaPhim)" href="xemchitiet" class="movie-beta__link">
-                         <img alt='' src="<?php echo asset('template/img_phim/panel_phim/{{lichchieu[7].AnhHienThi}}') ; ?>">
+                         <img alt=''  src="<?php echo asset('template/img_phim/panel_phim/{{lichchieu[7].AnhHienThi}}') ; ?>">
                          </a>
                      </div>
 
@@ -790,7 +788,7 @@
                          <p class="movie__option"><a href="#">{{lichchieu[7].TenTheLoai}}</a></p>
                          
                          <div class="movie__rate">
-                             <span class="movie__rating">{{lichchieu[7].DanhGia}}</span>
+                             <span class="movie__rating">{{lichchieu[7].DanhGia|number:1}}</span>
                          </div>               
                      </div>
                  </div>

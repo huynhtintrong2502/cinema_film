@@ -64,9 +64,30 @@ app.controller('BookfinalController', function($scope, $http, API, $rootScope, $
     };
     $http.get(API + 'apive').then(function(response) {
         $http.get(API + 've_first/' + response.data.MaPhim + '/' + response.data.NgayXem + '/' + response.data.MaSC + '/' + response.data.MaRap + '/' + response.data.MaGhe).then(function(response) {
-            $scope.ve = response.data.MaVe;
+            $scope.ve = response.data;
+            $scope.mave = response.data.MaVe;
+            $scope.maghe = response.data.MaGhe;
+            $scope.suatchieu = response.data.MaSC;
+            $scope.marap = response.data.MaRap;
             $http.get(API + 'get_vefirst/' + response.data.MaVe).then(function(response) {
-                $scope.ve = response.data;
+                var maphim = response.data.MaPhim
+                $http.get(API + 'getfilm_first_id_1/' + maphim).then(function(response) {
+                    $scope.phim = response.data;
+                    $http.get(API + 'getghe/' + $scope.maghe).then(function(response) {
+                        $scope.ghe = response.data;
+                        $http.get(API + 'getsuatchieu_id/' + $scope.suatchieu).then(function(response) {
+                            $scope.suatchieu = response.data;
+                            if ($scope.marap == 1)
+                                $scope.Rap = "Rạp 1";
+                            else $scope.Rap = "Rạp 2";
+                        });
+                    });
+
+
+                });
+
+
+
             });
         });
     });

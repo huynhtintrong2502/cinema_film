@@ -42,10 +42,7 @@
 <body ng-controller="Book1Controller">
     <div class="wrapper">
         <!-- Banner -->
-        <div class="banner-top">
-            <img alt='top banner' src="<?php echo asset('template/images/banners/bra.jpg');?>">
-        </div>
-
+      
         <!-- Header section -->
         <header class="header-wrapper">
             <div class="container">
@@ -245,9 +242,9 @@
             <div class="swiper-container">
               <div class="swiper-wrapper">
                   <!--First Slide-->
-                  <div class="swiper-slide" data-film='{{item.MaPhim}}' ng-repeat="item in listchieuphim"> 
+                  <div class="swiper-slide" data-film='{{item.MaPhim}}' ng-repeat="item in listchieuphim" style="text-align:center"> 
                         <div class="film-images" ng-click='chonphim(item)'>
-                            <img alt=''  src="<?php echo asset('template/img_phim/panel_phim/{{item.AnhHienThi}}');?>">
+                            <img alt='' height="300px"  src="<?php echo asset('template/img_phim/panel_phim/{{item.AnhHienThi}}');?>">
                         </div>
                         <p class="choose-film__title">{{item.TenPhim}}</p>
                   </div>
@@ -285,8 +282,8 @@
                       <input type="text" id="datepicker" value='01/03/2021' class="datepicker__input">
                     </div>
 
-                    <div class="btn">
-                      <input type='submit' value="load" ng-click="load()"/>
+                    <div class="btn" ng-click="load()">
+                      <input type='submit' value="load" />
                     </div>
                 </div>
 

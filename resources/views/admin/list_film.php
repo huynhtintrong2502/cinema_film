@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>INSPINIA | Phim</title>
+    <title>Admin Cinema | Phim</title>
     <script type="text/javascript" src="<?php echo asset('app/lib/angular.min.js') ; ?>"></script>
     <script type="text/javascript" src="<?php echo asset('app/admin/list_film.js') ; ?>"></script>
 
@@ -228,8 +228,8 @@
                     <div class="col-md-3" ng-repeat="item in listfilm | filter: search_text | orderBy: 'TenPhim'">
                         <div class="ibox">
                             <div class="ibox-content product-box">
-
-                                    <img alt="image" style="border-radius:10%" class="circle m-t-xs img-fluid" src="<?php echo asset('template/img_phim/panel_phim/{{item.AnhHienThi}}');?>">
+                            
+                                    <img alt="image"  style="border-radius:10%" width="330" height="500" class="circle m-t-xs img-fluid" src="<?php echo asset('template/img_phim/panel_phim/{{item.AnhHienThi}}');?>">
                                 
                                 <div class="product-desc">
                                     <span class="product-price">

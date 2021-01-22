@@ -40,9 +40,7 @@
 <body ng-Controller="listphimController"> 
     <div class="wrapper">
         <!-- Banner -->
-        <div class="banner-top">
-            <img alt='top banner' src="<?php echo asset('template/images/banners/bra.jpg');?>">
-        </div>
+  
 
         <!-- Header section -->
         <header class="header-wrapper">

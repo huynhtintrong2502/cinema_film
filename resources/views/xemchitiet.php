@@ -45,10 +45,7 @@
 <body ng-controller="xemchitietController">
     <div class="wrapper">
         <!-- Banner -->
-        <div class="banner-top">
-            <img alt='top banner' src="<?php echo asset('template/images/banners/bra.jpg') ; ?>">
-        </div>
-
+      
         <!-- Header section -->
         <header class="header-wrapper">
             <div class="container">
@@ -190,8 +187,8 @@
 
                     <div class="movie__info">
                         <div class="col-sm-4 col-md-3 movie-mobile">
-                            <div class="movie__images">
-                                <span class="movie__rating">{{phimfirst.DanhGia}}</span>
+                            <div class="movie__images" style="text-align: center">
+                                <span class="movie__rating">{{phimfirst.DanhGia|number:1}}</span>
                                 <img alt='' src="<?php echo asset('template/img_phim/panel_phim/{{phimfirst.AnhHienThi}}') ; ?>">
                             </div>
                         </div>
@@ -337,8 +334,8 @@
                       <input type="text" id="datepicker" value='01/03/2021' class="datepicker__input">
                     </div>
                     
-                    <div class="btn">
-                      <input type='submit' value="load" ng-click="load()"/>
+                    <div class="btn" ng-click="load()">
+                      <input type='submit' value="load" />
                     </div>
                     <a href="#" id="map-switch" class="watchlist watchlist--map watchlist--map-full" ng-click="loadgiochieu()"><span class="show-map">Show cinemas on map</span><span  class="show-time">Show cinema time table</span></a>
                     

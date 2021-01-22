@@ -42,9 +42,7 @@
 <body ng-controller="BookfinalController">
     <div class="wrapper place-wrapper">
         <!-- Banner -->
-        <div class="banner-top">
-            <img alt='top banner' src="<?php echo asset('template/images/banners/bra.jpg');?>">
-        </div>
+     
 
         <!-- Header section -->
         <header class="header-wrapper">
@@ -239,13 +237,13 @@
                                 <span class="ticket__item">Ticket number <strong class="ticket__number">a126bym4</strong></span>
                                 <span class="ticket__item ticket__date">Ngày xem: {{ve.NgayXem}}</span>
                                 <span class="ticket__item ticket__time">{{ve.TGBatDau}}</span>
-                                <span class="ticket__item">Cinema: <span class="ticket__cinema">{{ve.TenRap}}</span></span>
+                                <span class="ticket__item">Cinema: <span class="ticket__cinema">{{rap.TenRap}}</span></span>
                                 <span class="ticket__item ticket__price">price: <strong class="ticket__cost">${{ve.GiaVe}}</strong></span>
                             </div>
 
                             <div class="ticket-primery">
-                                <span class="ticket__item ticket__item--primery ticket__film">Film<br><strong class="ticket__movie">{{ve.TenPhim}} ({{ve.NamSX}})</strong></span>
-                                <span class="ticket__item ticket__item--primery">Sits: <span class="ticket__place">{{ve.TenGhe}}</span></span>
+                                <span class="ticket__item ticket__item--primery ticket__film">Film<br><strong class="ticket__movie">{{phim.TenPhim}} ({{phim.NamSX}})</strong></span>
+                                <span class="ticket__item ticket__item--primery">Sits: <span class="ticket__place">{{ghe.TenGhe}}</span></span>
                             </div>
 
 

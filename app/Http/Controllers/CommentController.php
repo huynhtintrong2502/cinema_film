@@ -24,11 +24,10 @@ class CommentController extends Controller
     public function get_list_comment($MaPhim)
     {
         return comment::join('khachhang', 'comment.MaKH', '=', 'khachhang.MaKH')
-                ->select('comment.*','khachhang.TenKH')
                 ->where([
                     ['comment.MaPhim','=',$MaPhim],
                     ['comment.Xoa','=',0]
-                ])->get();
+                ])->select('comment.*','khachhang.*')->get();
     }
 
     public function create_comment($MaPhim,$MaKH,$NoiDung)

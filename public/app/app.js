@@ -65,8 +65,6 @@ app.controller('IndexController', function($scope, $http, API, $rootScope, $wind
 
 
 
-
-
     $http.get(API + 'phimhot').then(function(response) {
         $scope.ListPhimHot = response.data;
     });
@@ -78,7 +76,9 @@ app.controller('IndexController', function($scope, $http, API, $rootScope, $wind
 
     $http.get(API + 'getlichchieu').then(function(response) {
         $scope.lichchieu = response.data;
-        console.log(response.data);
+        console.log($scope.lichchieu[1]);
+        console.log($scope.lichchieu[0]);
+        console.log($scope.lichchieu[2]);
 
     });
 

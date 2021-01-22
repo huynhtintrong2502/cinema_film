@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\api_maphim;
 use App\phim;
-use App\phimtheloai;
+use App\theloai;
 use App\lichchieuphim;
 use App\imgtrailer;
 
@@ -29,6 +29,8 @@ class PhimController extends Controller
                     ['phim.Xoa','=',0]
                 ])->first();
     }
+
+    
 
     public function search_film($search_text,$by_search)
     {
@@ -58,7 +60,7 @@ class PhimController extends Controller
             return phim::join('theloai', 'phim.MaTL', '=', 'theloai.MaTL')
                     ->select('phim.*','theloai.*')
                     ->where([
-                        ['phim.TenTheLoai','like','%' .$search_text.'%'],
+                        ['theloai.TenTheLoai','like','%' .$search_text.'%'],
                         ['phim.Xoa','=',0]
             ])->get();
         if($by_search == 5)

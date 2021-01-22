@@ -25,12 +25,24 @@ class LichChieuPhimController extends Controller
     public function listchieuphim()
     {
         $date = Carbon::parse(Carbon::now())->format('Y/m/d');
-        Carbon::parse(Carbon::now())->format('d/m/Y');
+        // return lichchieuphim::join('phim', 'lichchieuphim.MaPhim', '=', 'phim.MaPhim')->where([
+        //     ['lichchieuphim.Xoa','=',0],
+        //     ['lichchieuphim.NgayChieu','>=',$date]
+        // ])
+        // ->select('lichchieuphim.*','phim.*')->get();
+        return phim::limit(8)->get();
+        
+    }
+
+    public function listchieuphim_1()
+    {
+        $date = Carbon::parse(Carbon::now())->format('Y/m/d');
         return phim::join('lichchieuphim', 'lichchieuphim.MaPhim', '=', 'phim.MaPhim')->where([
-            ['phim.Xoa','=',0],
+            ['lichchieuphim.Xoa','=', 0 ],
             ['lichchieuphim.NgayChieu','>=',$date]
         ])
-        ->select('lichchieuphim.*','phim.*')->orderBy('phim.TenPhim','DESC')->get();
+        ->select('lichchieuphim.*','phim.*')->get();
+        
     }
 
     public function get_ngaychieu_suatchieu($date,$date_finish)
@@ -58,5 +70,10 @@ class LichChieuPhimController extends Controller
         $cmt->save();
 
         return $cmt;
+    }
+
+    public function getfilm_first_id($id)
+    {
+        return phim::where('MaPhim','=',$id)->first();
     }
 }

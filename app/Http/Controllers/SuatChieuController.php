@@ -14,5 +14,15 @@ class SuatChieuController extends Controller
     {
         return suatchieu::where('TGBatDau','=',$giochieu)->first();
     }
+
+    public function getsuatchieu_id($id)
+    {
+        return suatchieu::where([
+            ['MaSC','=',$id],
+            ['Xoa','=',0]
+        ])->first();
+    }
+
+    
     
 }

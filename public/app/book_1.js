@@ -184,7 +184,7 @@ app.controller('Book1Controller', function($scope, $http, API, $rootScope, $loca
 
             //get phim đang và sắp chiếu
 
-            $http.get(API + 'getlichchieu').then(function(response) {
+            $http.get(API + 'getlichchieu_1').then(function(response) {
                 $scope.listchieuphim = response.data;
             });
 

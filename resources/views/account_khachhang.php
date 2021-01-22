@@ -356,7 +356,7 @@
                                                 <div class="col-sm-10"><input type="text"  class="form-control" placeholder="Email" ng-model="email"></div>
                                             </div>
                                             <div class="form-group row"><label class="col-sm-2 col-form-label">Số điện thoại:</label>
-                                                <div class="col-sm-10"><input type="text"  class="form-control" placeholder="Số điện thoại" ng-model="sodienthoai"></div>
+                                                <div class="col-sm-10"><input type="text"  class="form-control" placeholder="Số điện thoại" ng-model="sdt"></div>
                                             </div>
                                             <div class="form-group row"><label class="col-sm-2 col-form-label">Chứng minh nhân dân:</label>
                                                 <div class="col-sm-10"><input type="text"  class="form-control" placeholder="Chứng minh nhân dân" ng-model="cmnd"></div>

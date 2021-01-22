@@ -9,7 +9,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>INSPINIA | Data Tables</title>
+    <title>Admin Cinema | Lịch chiếu</title>
 
     <script type="text/javascript" src="<?php echo asset('app/lib/angular.min.js') ; ?>"></script>
     <script type="text/javascript" src="<?php echo asset('app/admin/suatchieu.js') ; ?>"></script>
